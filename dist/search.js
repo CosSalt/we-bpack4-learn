@@ -96,8 +96,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _search_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
-/* harmony import */ var _search_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_search_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _search_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
+/* harmony import */ var _search_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_search_less__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -8921,7 +8921,7 @@ if(false) {}
 
 exports = module.exports = __webpack_require__(16)(false);
 // Module
-exports.push([module.i, ".search-text {\n  font-size: 20px;\n  color: red;\n}", ""]);
+exports.push([module.i, ".search-text {\n  font-size: 20px;\n  color: red;\n}\n", ""]);
 
 
 
