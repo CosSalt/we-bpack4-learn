@@ -15,4 +15,10 @@ module.exports = {
     filename: '[name].js', // 占位符默认main
   },
   mode: 'development', // 'development' || 'production'
+  // loaders: 处理webpack原生不能处理的文件（模块），原生只支持js和json
+  module: {
+    rules: [
+      {}
+    ]
+  }
 }
