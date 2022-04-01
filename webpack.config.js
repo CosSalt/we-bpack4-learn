@@ -44,5 +44,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  watch: true, // 文件监听，自动构建出新的输出文件
+  watchOptions: {
+    ignored: /node_modules/, // 忽略包的文件监听
   }
 }
