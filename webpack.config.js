@@ -30,6 +30,18 @@ module.exports = {
       {
         test: /\.less$/,
         use: ['style-loader', 'css-loader', 'less-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|jpeg)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
+        test: /\.(woff|woff2|otf|ttf)$/,
+        use: [
+          'file-loader' // 可以用url-loader
+        ]
       }
     ]
   }
