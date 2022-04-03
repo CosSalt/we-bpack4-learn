@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import logo from './images/logo.jpg'
 import TestModule from './test'
 import './search.less'
@@ -20,7 +20,11 @@ const Search  = () => {
   )
 }
 
-const reactRender = () => ReactDom.render(<Search />, document.getElementById('root'))
+const reactRender = () => {
+  const container = document.getElementById('root')
+  const root = createRoot(container)
+  root.render(<Search />)
+}
 
 if(module.hot) {
   module.hot.accept(reactRender)
