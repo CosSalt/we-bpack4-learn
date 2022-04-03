@@ -7,13 +7,14 @@ const webpack = require('webpack')
 const config = {
   // entry: 打包输入
   entry: {
-    index: './src/index.js',
+    bundle: './src/index.js',
     search: './src/search.js'
   },
   // output: 打包输出位置
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js', // 占位符默认main
+    chunkFilename: '[name].js', // 中间生成的chunk，如按需加载
   },
 
   mode: 'development', // 'development' || 'production' || 'none'
@@ -50,14 +51,15 @@ const config = {
   watchOptions: {
     ignored: /node_modules/, // 忽略包的文件监听
   },
-  // plugins:[
-  //   new webpack.HotModuleReplacementPlugin()
-  // ],
+  plugins:[
+    new webpack.HotModuleReplacementPlugin()
+  ],
   devServer: {
-    // contentBase: './dist',
-    // hot: true,
+    contentBase: './dist', // 引入一些静态资源文件，如index.html
+    hot: true,
     port: 8090,
-    lazy: true,
+    // inline: true, // false 则使用iframe的模式
+    // lazy: true, // 报错，原因未知
   }
 }
 

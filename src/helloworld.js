@@ -11,6 +11,7 @@ export const test = () => {
 }
 
 export const test2 = () => {
+  console.log('hell0pdsfsfs')
   console.log('test', this?.a)
 }
 

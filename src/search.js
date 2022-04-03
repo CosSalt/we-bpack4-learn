@@ -5,11 +5,18 @@ import TestModule from './test'
 import './search.less'
 
 const Search  = () => {
+  const onClick = () => {
+    import('./simple').then(show => {
+      console.log('show', show.test())
+    })
+  } 
   return (
     <div className='search-text'>
+      <button onClick={onClick}>click</button>
       <TestModule />
       <img src={logo}></img>
-      Search Text13
+      Search Text3
+      
     </div>
   )
 }
