@@ -15,6 +15,7 @@ inline 是在entry的所有入口文件生成的bundle中都注入代理客户�
 在自动刷新的机制上更近一步的就是HMR
 ### HMR
 在HMR的模式中，当一个模块变动后，会发出一个向上传递的事件，当找到更新逻辑之后，就执行对应的更新逻辑（会向浏览器推送两个文件一个json和一个js文件），其中是可以自定义更新逻辑，如果一直没有找到更新逻辑，就会将页面刷新作为兜底逻辑
+对于css文件，style-loader 中使用了module.hot.accept来处理热更新的问题
 在使用HMR中，我们需要引入webpack-dev-server这个包,再在配置文件(默认webpack.config.js)中配置devServer，根据测试启用启用HMR(3.x 版本)后，watch属性的设置就无效了，
 ``` javascript
 // 3.x 版本 只用到了watchOptions, 忽略了 watch 属性的值, 通过lazy配置选项来提供类似的能力了（但我在尝试的过程中报错了）
@@ -32,3 +33,15 @@ watch:
     : def.watch
 }
 ```
+### 其它代码和框架
+社区还提供许多其他 loader 和示例，可以使 HMR 与各种框架和库平滑地进行交互……
+
+[React Hot Loader](https://github.com/gaearon/react-hot-loader): 实时调整 react 组件。
+[Vue Loader](https://github.com/vuejs/vue-loader): 此 loader 支持 vue 组件的 HMR，提供开箱即用体验。
+[Elm Hot webpack Loader](https://github.com/klazuka/elm-hot-webpack-loader): 支持 Elm 编程语言的 HMR。
+[Angular HMR](https://github.com/PatrickJS/angular-hmr): 没有必要使用 loader！直接修改 NgModule 主文件就够了，它可以完全控制 HMR API。
+[Svelte Loader](https://github.com/sveltejs/svelte-loader): 此 loader 开箱即用地支持 Svelte 组件的热更新。
+
+### 参考
+[HMR](https://webpack.docschina.org/guides/hot-module-replacement#enabling-hmr)
+
