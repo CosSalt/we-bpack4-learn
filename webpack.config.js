@@ -7,6 +7,9 @@ const webpack = require('webpack')
 const config = {
   // entry: 打包输入
   entry: {
+    start: [
+      'react-hot-loader/patch'
+    ],
     bundle: './src/index.js',
     search: './src/search.js'
   },
@@ -46,6 +49,11 @@ const config = {
         ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
   watch: true, // 文件监听，自动构建出新的输出文件
   watchOptions: {

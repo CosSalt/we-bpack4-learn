@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import logo from './images/logo.jpg'
 import TestModule from './test'
+import hotReplace from './hot-replace'
 import './search.less'
 
 const Search  = () => {
@@ -20,5 +21,5 @@ const Search  = () => {
     </div>
   )
 }
-
-ReactDom.render(<Search />, document.getElementById('root'))
+console.log('hotReplace(<Search />)', hotReplace(<Search />))
+ReactDom.render(hotReplace(<Search />), document.getElementById('root'))
