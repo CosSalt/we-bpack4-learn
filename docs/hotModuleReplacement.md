@@ -44,4 +44,6 @@ watch:
 
 ### 参考
 [HMR](https://webpack.docschina.org/guides/hot-module-replacement#enabling-hmr)
-
+[Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
+[搞懂webpack热更新原理](https://github.com/careteenL/webpack-hmr)
+[Webpack 热更新实现原理分析](https://zhuanlan.zhihu.com/p/30623057)
