@@ -15,10 +15,15 @@ const Search  = () => {
       <button onClick={onClick}>click</button>
       <TestModule />
       <img src={logo}></img>
-      Search Text3
-      
+      Search Text3 1
     </div>
   )
 }
 
-ReactDom.render(<Search />, document.getElementById('root'))
+const reactRender = () => ReactDom.render(<Search />, document.getElementById('root'))
+
+if(module.hot) {
+  module.hot.accept(reactRender)
+}
+
+reactRender()

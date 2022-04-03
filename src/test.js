@@ -2,7 +2,7 @@ import React from 'react'
 
 const TestModule = () => {
   return (
-    <div>test module1r11r</div>
+    <div>test module</div>
   )
 }
 
