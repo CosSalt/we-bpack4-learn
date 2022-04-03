@@ -1,9 +1,10 @@
 'use strict';
 
 const path = require('path')
+const webpack = require('webpack')
 
 
-module.exports = {
+const config = {
   // entry: 打包输入
   entry: {
     index: './src/index.js',
@@ -15,7 +16,7 @@ module.exports = {
     filename: '[name].js', // 占位符默认main
   },
 
-  mode: 'none', // 'development' || 'production' || 'none'
+  mode: 'development', // 'development' || 'production' || 'none'
   // loaders: 处理webpack原生不能处理的文件（模块），原生只支持js和json
   module: {
     rules: [
@@ -48,5 +49,17 @@ module.exports = {
   watch: true, // 文件监听，自动构建出新的输出文件
   watchOptions: {
     ignored: /node_modules/, // 忽略包的文件监听
+  },
+  // plugins:[
+  //   new webpack.HotModuleReplacementPlugin()
+  // ],
+  devServer: {
+    // contentBase: './dist',
+    // hot: true,
+    port: 8090,
+    lazy: true,
   }
 }
+
+
+module.exports = config

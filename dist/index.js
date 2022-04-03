@@ -81,51 +81,33 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./src/helloworld.js":
+/*!***************************!*\
+  !*** ./src/helloworld.js ***!
+  \***************************/
+/*! exports provided: helloworld, helloTest, test, test2, test3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _helloworld__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-
-document.write(Object(_helloworld__WEBPACK_IMPORTED_MODULE_0__["helloworld"])());
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"helloworld\", function() { return helloworld; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"helloTest\", function() { return helloTest; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"test\", function() { return test; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"test2\", function() { return test2; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"test3\", function() { return test3; });\nvar _this = undefined;\n\nfunction helloworld() {\n  return 'Hello webpack';\n}\nfunction helloTest() {\n  return 'Hello test';\n}\nvar test = function test() {\n  console.log('test', _this === null || _this === void 0 ? void 0 : _this.a);\n};\nvar test2 = function test2() {\n  console.log('test', _this === null || _this === void 0 ? void 0 : _this.a);\n};\nfunction test3() {\n  var _this2 = this;\n\n  return function () {\n    console.log('test', _this2 === null || _this2 === void 0 ? void 0 : _this2.c);\n  };\n}\n\n//# sourceURL=webpack:///./src/helloworld.js?");
 
 /***/ }),
-/* 1 */
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "helloworld", function() { return helloworld; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "helloTest", function() { return helloTest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "test", function() { return test; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "test2", function() { return test2; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "test3", function() { return test3; });
-var _this = undefined;
-
-function helloworld() {
-  return 'Hello webpack';
-}
-function helloTest() {
-  return 'Hello test';
-}
-var test = function test() {
-  console.log('test', _this === null || _this === void 0 ? void 0 : _this.a);
-};
-var test2 = function test2() {
-  console.log('test', _this === null || _this === void 0 ? void 0 : _this.a);
-};
-function test3() {
-  var _this2 = this;
-
-  return function () {
-    console.log('test', _this2 === null || _this2 === void 0 ? void 0 : _this2.c);
-  };
-}
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helloworld__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helloworld */ \"./src/helloworld.js\");\n\ndocument.write(Object(_helloworld__WEBPACK_IMPORTED_MODULE_0__[\"helloworld\"])());\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
-/******/ ]);
+
+/******/ });
