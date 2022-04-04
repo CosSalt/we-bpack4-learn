@@ -3,6 +3,7 @@
 const path = require('path')
 const { HotModuleReplacementPlugin } = require('webpack')
 const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -72,6 +73,21 @@ const config = {
     // css 打包为单独的文件
     new MiniCssExtractPlugin({
       filename: '[name].css'
+    }),
+    // html
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public/index.html'), // 模版
+      filename: 'index.html', // 打包出来的文件名称
+      chunks: ['search'], // 生成的html要使用哪些chunk
+      inject: true, // 将需要的chunk的相关的js、css等注入到html中
+      minify: { // 压缩
+        html5: true,
+        collapseWhitespace: true,
+        preserveLineBreaks: false,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: false
+      }
     })
   ],
   devServer: {
