@@ -6,6 +6,7 @@ const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackExtenalsPlugin = require('html-webpack-externals-plugin')
 
 const config = {
   // entry: 打包输入
@@ -102,6 +103,20 @@ const config = {
     }),
     // 清除dist目录
     new CleanWebpackPlugin(),
+    new HtmlWebpackExtenalsPlugin({
+      externals: [
+        {
+          module: 'react',
+          entry: 'https://unpkg.com/react@18/umd/react.production.min.js',
+          global: 'React'
+        },
+        {
+          module: 'react-dom',
+          entry: 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
+          global: 'ReactDOM'
+        }
+      ]
+    })
   ],
 }
 
