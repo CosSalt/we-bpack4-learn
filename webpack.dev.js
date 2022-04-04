@@ -14,8 +14,8 @@ const config = {
   // output: 打包输出位置
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name]_[hash].js', // 占位符默认main
-    chunkFilename: 'extra/[name]_[hash].js', // 中间生成的chunk，如按需加载
+    filename: '[name].js', // 占位符默认main
+    chunkFilename: 'extra/[name].js', // 中间生成的chunk，如按需加载
   },
 
   mode: 'development', // 'development' || 'production' || 'none'
@@ -62,7 +62,7 @@ const config = {
     // HotModuleReplacementPlugin(),
     // css 打包为单独的文件
     new MiniCssExtractPlugin({
-      filename: '[name]_[contenthash:8].css'
+      filename: '[name].css'
     })
   ],
   devServer: {
