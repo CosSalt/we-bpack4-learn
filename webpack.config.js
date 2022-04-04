@@ -1,7 +1,8 @@
 'use strict';
 
 const path = require('path')
-const webpack = require('webpack')
+const { HotModuleReplacementPlugin } = require('webpack')
+const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 
 
 const config = {
@@ -13,8 +14,8 @@ const config = {
   // output: 打包输出位置
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js', // 占位符默认main
-    chunkFilename: '[name].js', // 中间生成的chunk，如按需加载
+    filename: '[name]_[chunkhash:8].js', // 占位符默认main
+    chunkFilename: '[name]_[chunkhash:8].js', // 中间生成的chunk，如按需加载
   },
 
   mode: 'development', // 'development' || 'production' || 'none'
@@ -35,8 +36,12 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif|jpeg)$/,
-        use: [
-          'file-loader'
+        use: [{
+            loader: 'file-loader',
+            options: {
+              name: 'img/[name]_[hash:8].[ext]', // 图片的文件指纹中的hash是内容的hash值
+            }
+          }
         ]
       },
       {
@@ -47,12 +52,16 @@ const config = {
       }
     ]
   },
-  watch: true, // 文件监听，自动构建出新的输出文件
+  // watch: true, // 文件监听，自动构建出新的输出文件(watch 最好别写在配置里）
   watchOptions: {
     ignored: /node_modules/, // 忽略包的文件监听
   },
   plugins:[
-    new webpack.HotModuleReplacementPlugin()
+    // HotModuleReplacementPlugin(),
+    // css 打包为单独的文件
+    new MiniCssExtractPlugin({
+      filename: '[name]_[contenthash:8].css'
+    })
   ],
   devServer: {
     contentBase: './dist', // 引入一些静态资源文件，如index.html
