@@ -36,6 +36,10 @@ watch:
 
 ### 热更新原理
 webpack-dev-server 会提供一个Bundle Server, 浏览器能以http的形式访问到，在更新阶段HMR Server(服务器端)会通过websocket的方式将更新信息传递给HMR Runtime(客户端)，会传递两次一次是hash,一次是编译成功，失败会刷新浏览器，客户端会发两次请求获取json（变更文件的信息）和变更的js文件(jsonp的方式)，客户端再去更新页面信息，基于模块想上传的事件被处理来实现不同的更新逻辑，如果没有被处理或者过程中报错了就会刷新页面
+
+### 其它
+模块热更新不能使用 chunkhash 和 contenthash，而应该使用hash，而应该使用name或hash，因为服务器端不知道何时清除文件，会造成内存泄漏，（hash可用应该是因为可以把其它的hash的都清除了）
+[webpack-dev-server --hot](https://github.com/webpack/webpack-dev-server/issues/377)
 ### 其它代码和框架
 社区还提供许多其他 loader 和示例，可以使 HMR 与各种框架和库平滑地进行交互……
 

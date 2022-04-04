@@ -12,10 +12,10 @@ const Search  = () => {
   } 
   return (
     <div className='search-text test'>
-      <button onClick={onClick}>click</button>
+      <button onClick={onClick}>click1</button>
       <TestModule />
       <img src={logo}></img>
-      Search Text3 12431
+      Search Text3
     </div>
   )
 }

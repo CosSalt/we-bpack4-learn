@@ -14,8 +14,8 @@ const config = {
   // output: 打包输出位置
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name]_[chunkhash:8].js', // 占位符默认main
-    chunkFilename: '[name]_[chunkhash:8].js', // 中间生成的chunk，如按需加载
+    filename: '[name]_[hash].js', // 占位符默认main
+    chunkFilename: 'extra/[name]_[hash].js', // 中间生成的chunk，如按需加载
   },
 
   mode: 'development', // 'development' || 'production' || 'none'
