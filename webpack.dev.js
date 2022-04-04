@@ -5,6 +5,7 @@ const { HotModuleReplacementPlugin } = require('webpack')
 const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -91,7 +92,22 @@ const config = {
       }
     }),
     // 清除dist目录
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    // 外部引用
+    new HtmlWebpackExternalsPlugin({
+      externals: [
+        {
+          module: 'react',
+          entry: 'https://unpkg.com/react@18/umd/react.development.js',
+          global: 'React'
+        },
+        {
+          module: 'react-dom',
+          entry: 'https://unpkg.com/react-dom@18/umd/react-dom.development.js',
+          global: 'ReactDOM'
+        }
+      ]
+    })
   ],
   devServer: {
     contentBase: './dist', // 引入一些静态资源文件，如index.html
