@@ -15,19 +15,21 @@ const Search  = () => {
       <button onClick={onClick}>click</button>
       <TestModule />
       <img src={logo}></img>
-      Search Text3 1
+      Search Text3 12431
     </div>
   )
 }
 
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+
 const reactRender = () => {
-  const container = document.getElementById('root')
-  const root = createRoot(container)
   root.render(<Search />)
 }
 
-if(module.hot) {
-  module.hot.accept(reactRender)
-}
+// if(module.hot) {
+//   module.hot.accept(root.render)
+// }
 
 reactRender()
