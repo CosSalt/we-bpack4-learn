@@ -12,10 +12,10 @@ const Search  = () => {
   } 
   return (
     <div className='search-text test'>
-      <button onClick={onClick}>click1</button>
+      <button onClick={onClick}>click12</button>
       <TestModule />
       <img src={logo}></img>
-      Search Text3
+      Search Text312
     </div>
   )
 }
@@ -28,8 +28,8 @@ const reactRender = () => {
   root.render(<Search />)
 }
 
-// if(module.hot) {
-//   module.hot.accept(root.render)
-// }
+if(module.hot) {
+  module.hot.accept(root.render)
+}
 
 reactRender()

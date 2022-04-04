@@ -5,6 +5,7 @@ const { HotModuleReplacementPlugin } = require('webpack')
 const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const config = {
   // entry: 打包输入
@@ -87,7 +88,9 @@ const config = {
         minifyJS: true,
         removeComments: false
       }
-    })
+    }),
+    // 清除dist目录
+    new CleanWebpackPlugin(),
   ],
 }
 

@@ -4,6 +4,7 @@ const path = require('path')
 const { HotModuleReplacementPlugin } = require('webpack')
 const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -88,7 +89,9 @@ const config = {
         minifyJS: true,
         removeComments: false
       }
-    })
+    }),
+    // 清除dist目录
+    new CleanWebpackPlugin()
   ],
   devServer: {
     contentBase: './dist', // 引入一些静态资源文件，如index.html
