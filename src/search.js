@@ -11,7 +11,7 @@ const Search  = () => {
     })
   } 
   return (
-    <div className='search-text'>
+    <div className='search-text test'>
       <button onClick={onClick}>click</button>
       <TestModule />
       <img src={logo}></img>
