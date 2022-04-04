@@ -40,6 +40,21 @@ webpack-dev-server 会提供一个Bundle Server, 浏览器能以http的形式访
 ### 其它
 模块热更新不能使用 chunkhash 和 contenthash，而应该使用hash，而应该使用name或hash，因为服务器端不知道何时清除文件，会造成内存泄漏，（hash可用应该是因为可以把其它的hash的都清除了）
 [webpack-dev-server --hot](https://github.com/webpack/webpack-dev-server/issues/377)
+
+mini-css-extract-plugin 不能热更新问题 
+[mini-css-extract-plugin使用中遇到的问题](https://www.zhuyuntao.cn/mini-css-extract-plugin%E4%BD%BF%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98)
+[mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
+
+``` javascript
+{
+  loader: MiniCssExtractPlugin.loader,
+  options: {
+      hmr: process.env.NODE_ENV === 'development',
+      reloadAll: true
+  }
+}
+```
+
 ### 其它代码和框架
 社区还提供许多其他 loader 和示例，可以使 HMR 与各种框架和库平滑地进行交互……
 

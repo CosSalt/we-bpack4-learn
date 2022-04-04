@@ -4,6 +4,15 @@ const path = require('path')
 const { HotModuleReplacementPlugin } = require('webpack')
 const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 
+const isDev = process.env.NODE_ENV === 'development'
+
+const MiniCssExtractPluginLoader = {
+  loader: MiniCssExtractPlugin.loader,
+  options: {
+    hmr: isDev,
+    reloadAll: true
+  }
+}
 
 const config = {
   // entry: 打包输入
@@ -29,12 +38,12 @@ const config = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'], // style-loader 是插入到header 的style标签里面的
-        use: [MiniCssExtractPlugin.loader, 'css-loader'], // style-loader 是插入到header 的style标签里面的
+        use: [MiniCssExtractPluginLoader, 'css-loader'], // style-loader 是插入到header 的style标签里面的
       },
       {
         test: /\.less$/,
         use: ['style-loader', 'css-loader', 'less-loader'],
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+        use: [MiniCssExtractPluginLoader, 'css-loader', 'less-loader']
       },
       {
         test: /\.(png|jpg|gif|jpeg)$/,
