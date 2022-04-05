@@ -48,15 +48,7 @@ const config = {
               })
             ]
           }
-        },
-        {
-          loader: 'px2rem-loader',
-          options: {
-            remUnit: 75,
-            remPrecision: 8,
-          }
-        }
-      ],
+        }],
       },
       {
         test: /\.(png|jpg|gif|jpeg)$/,
