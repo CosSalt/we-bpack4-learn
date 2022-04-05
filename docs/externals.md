@@ -22,3 +22,4 @@ new HtmlWebpackExtenalsPlugin({
   ]
 })
 ```
+似乎线上环境才有用

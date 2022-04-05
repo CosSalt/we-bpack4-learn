@@ -90,7 +90,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public/index.html'), // 模版
       filename: 'index.html', // 打包出来的文件名称
-      chunks: ['search'], // 生成的html要使用哪些chunk
+      chunks: ['vendors', 'search'], // 生成的html要使用哪些chunk
       inject: true, // 将需要的chunk的相关的js、css等注入到html中
       minify: { // 压缩
         html5: true,
@@ -104,21 +104,33 @@ const config = {
     // 清除dist目录
     new CleanWebpackPlugin(),
     // 外部引用
-    new HtmlWebpackExternalsPlugin({
-      externals: [
-        {
-          module: 'react',
-          entry: 'https://unpkg.com/react@18/umd/react.production.min.js',
-          global: 'React'
-        },
-        {
-          module: 'react-dom',
-          entry: 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
-          global: 'ReactDOM'
-        }
-      ]
-    })
+    // new HtmlWebpackExternalsPlugin({
+    //   externals: [
+    //     {
+    //       module: 'react',
+    //       entry: 'https://unpkg.com/react@18/umd/react.production.min.js',
+    //       global: 'React'
+    //     },
+    //     {
+    //       module: 'react-dom',
+    //       entry: 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
+    //       global: 'ReactDOM'
+    //     }
+    //   ]
+    // }),
+
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /(react|react-dom)/,
+          name: 'vendors', // 将其添加到HtmlWebpackPlugin 的chunks中，才能加到html文件中
+          chunks: 'all'
+        }
+      }
+    }
+  }
 }
 
 
