@@ -141,8 +141,8 @@ const config = {
           minChunks: 2
         }
       }
-    }
-  }
+    },
+  },
 }
 
 module.exports = config

@@ -37,5 +37,8 @@
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  }
+  },
+  "sideEffects": [
+    "./src/common/tree-shaking.js"
+  ]
 }
