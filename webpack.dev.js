@@ -116,7 +116,7 @@ const config = {
     // inline: true, // false 则使用iframe的模式
     // lazy: true, // 报错，原因未知
   },
-  devtool: 'cheap-source-map'
+  devtool: 'source-map'
 }
 
 
