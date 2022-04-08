@@ -22,7 +22,7 @@ const config = {
     chunkFilename: '[name]_[chunkhash:8].js', // 中间生成的chunk，如按需加载
   },
 
-  mode: 'production', // 'development' || 'production' || 'none'
+  mode: 'none', // 'development' || 'production' || 'none'
   // loaders: 处理webpack原生不能处理的文件（模块），原生只支持js和json
   module: {
     rules: [

@@ -3,8 +3,10 @@ import { createRoot } from 'react-dom/client'
 import logo from './images/logo.jpg'
 import TestModule from './test'
 import { common } from './common'
+import { a } from './common/tree-shaking'
 import './search.less'
 
+a()
 common()
 
 const Search  = () => {
