@@ -9,7 +9,9 @@ const Search  = () => {
     import('./simple').then(show => {
       console.log('show', show.test())
     })
-  } 
+  }
+  // debugger
+  // a = 1;
   return (
     <div className='search-text test'>
       <button onClick={onClick}>click12</button>

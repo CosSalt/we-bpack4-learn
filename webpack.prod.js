@@ -14,6 +14,7 @@ const config = {
     bundle: './src/index.js',
     search: './src/search.js'
   },
+  devtool: 'source-map',
   // output: 打包输出位置
   output: {
     path: path.resolve(__dirname, 'dist'),
