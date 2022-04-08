@@ -2,7 +2,10 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import logo from './images/logo.jpg'
 import TestModule from './test'
+import { common } from './common'
 import './search.less'
+
+common()
 
 const Search  = () => {
   const onClick = () => {

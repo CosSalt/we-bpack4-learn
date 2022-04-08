@@ -14,7 +14,7 @@ const config = {
     bundle: './src/index.js',
     search: './src/search.js'
   },
-  devtool: 'source-map',
+  // devtool: 'source-map',
   // output: 打包输出位置
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -122,17 +122,27 @@ const config = {
 
   ],
   optimization: {
+    // // 公共包
+    // splitChunks: {
+    //   cacheGroups: {
+    //     commons: {
+    //       test: /(react|react-dom)/,
+    //       name: 'vendors', // 将其添加到HtmlWebpackPlugin 的chunks中，才能加到html文件中
+    //       chunks: 'all'
+    //     }
+    //   }
+    // },
     splitChunks: {
+      minSize: 0,
       cacheGroups: {
         commons: {
-          test: /(react|react-dom)/,
-          name: 'vendors', // 将其添加到HtmlWebpackPlugin 的chunks中，才能加到html文件中
-          chunks: 'all'
+          name: 'commons',
+          chunks: 'all',
+          minChunks: 2
         }
       }
     }
   }
 }
-
 
 module.exports = config
