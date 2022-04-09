@@ -91,7 +91,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public/index.html'), // 模版
       filename: 'index.html', // 打包出来的文件名称
-      chunks: ['vendors', 'search'], // 生成的html要使用哪些chunk
+      chunks: ['vendors', 'search', 'commons'], // 生成的html要使用哪些chunk
       inject: true, // 将需要的chunk的相关的js、css等注入到html中
       minify: { // 压缩
         html5: true,
