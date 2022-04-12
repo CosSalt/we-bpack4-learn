@@ -3,24 +3,29 @@ import { createRoot } from 'react-dom/client'
 import logo from './images/logo.jpg'
 import TestModule from './test'
 import { common } from './common'
-import { a } from './common/tree-shaking'
-import './search.less'
+// import './search.less'
 
-a()
+
 common()
 
 const Search  = () => {
-  const onClick = () => {
-    import('./simple').then(show => {
-      console.log('show', show.test())
-    })
-  }
   // debugger
   // a = 1;
   return (
     <div className='search-text test'>
       <button onClick={onClick}>click12</button>
       <TestModule />
+      <div>
+        1
+        <div>11
+          <div>111</div>
+          <div>112</div>
+        </div>
+        <div>12
+          <div>121</div>
+          <div>122</div>
+        </div>
+      </div>
       <img src={logo}></img>
       Search Text312
     </div>

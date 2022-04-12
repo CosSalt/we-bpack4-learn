@@ -22,7 +22,7 @@ const config = {
     chunkFilename: '[name]_[chunkhash:8].js', // 中间生成的chunk，如按需加载
   },
 
-  mode: 'production', // 'development' || 'production' || 'none'
+  mode: 'none', // 'development' || 'production' || 'none'
   // loaders: 处理webpack原生不能处理的文件（模块），原生只支持js和json
   module: {
     rules: [
@@ -105,20 +105,20 @@ const config = {
     // 清除dist目录
     new CleanWebpackPlugin(),
     // 外部引用
-    // new HtmlWebpackExternalsPlugin({
-    //   externals: [
-    //     {
-    //       module: 'react',
-    //       entry: 'https://unpkg.com/react@18/umd/react.production.min.js',
-    //       global: 'React'
-    //     },
-    //     {
-    //       module: 'react-dom',
-    //       entry: 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
-    //       global: 'ReactDOM'
-    //     }
-    //   ]
-    // }),
+    new HtmlWebpackExternalsPlugin({
+      externals: [
+        {
+          module: 'react',
+          entry: 'https://unpkg.com/react@18/umd/react.production.min.js',
+          global: 'React'
+        },
+        {
+          module: 'react-dom',
+          entry: 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
+          global: 'ReactDOM'
+        }
+      ]
+    }),
 
   ],
   optimization: {
