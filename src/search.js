@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import logo from './images/logo.jpg'
 import TestModule from './test'
@@ -9,11 +9,25 @@ import { common } from './common'
 common()
 
 const Search  = () => {
+  const onClick = () => {
+    
+  }
+  const [TextContent, setTextContent] = useState()
   // debugger
   // a = 1;
+  const loadComponent = () => {
+    import('./text.js').then(({ default: Text }) => {
+      setTextContent(Text)
+    })
+  }
+  console.log('TextContent', TextContent)
   return (
     <div className='search-text test'>
       <button onClick={onClick}>click12</button>
+      <button onClick={loadComponent}>动态 import</button>
+      {
+        TextContent ? <>{ TextContent }</> : null
+      }
       <TestModule />
       <div>
         1
