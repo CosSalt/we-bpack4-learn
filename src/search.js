@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import logo from './images/logo.jpg'
 import TestModule from './test'
 import { common } from './common'
+import lagetNumber from 'odan-large-number'
 // import './search.less'
 
 
@@ -25,6 +26,7 @@ const Search  = () => {
     <div className='search-text test'>
       <button onClick={onClick}>click12</button>
       <button onClick={loadComponent}>动态 import</button>
+      { lagetNumber(999, 999)}
       {
         TextContent ? <>{ TextContent }</> : null
       }
