@@ -20,7 +20,7 @@ const Search  = () => {
       setTextContent(Text)
     })
   }
-
+  console.log('TextContent', TextContent)
   return (
     <div className='search-text test'>
       <button onClick={onClick}>click12</button>

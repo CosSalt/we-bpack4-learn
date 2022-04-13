@@ -7,7 +7,6 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin');
 
 const config = {
   // entry: 打包输入
@@ -29,9 +28,7 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        use: [
-          'babel-loader'
-        ]
+        use: 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -122,10 +119,7 @@ const config = {
         }
       ]
     }),
-    // eslint
-    new ESLintPlugin({
-      
-    })
+
   ],
   optimization: {
     // // 公共包
