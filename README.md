@@ -10,3 +10,4 @@ eslint 配置没成功 [type](https://nodejs.org/docs/latest-v13.x/api/esm.html#
 ### 其它
 [scripts]https://docs.npmjs.com/cli/v8/using-npm/scripts
 npm 内置了一些命令，这些命令有对应的生命周期以及对应的钩子函数，在publish中prepublish已经废弃了，需要用prepublishOnly
+[npm scripts 使用指南](https://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
