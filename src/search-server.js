@@ -7,36 +7,17 @@
 
 const React = require('react')
 const logo = require('./images/logo.jpg')
-const TestModule = require('./test')
-const { common } = require('./common')
 const lagetNumber = require('odan-large-number')
-console.log('React123131', React)
-const { useState } = React
 
-common()
-
-const Search  = () => {
-  const onClick = () => {
-    
-  }
-  const [TextContent, setTextContent] = useState()
-  // debugger
-  // a = 1;
-  const loadComponent = () => {
-    // import('./text.js').then(({ default: Text }) => {
-    //   setTextContent(Text)
-    // })
-  }
-  console.log('TextContent', TextContent)
+// 用useState 会报错
+const Search = () => {
+  const onClick = () => {}
   return (
     <div className='search-text test'>
       <button onClick={onClick}>click12</button>
-      <button onClick={loadComponent}>动态 import</button>
+      <button onClick={onClick}>动态 import</button>
+      state: { state}
       { lagetNumber(999, 999)}
-      {
-        TextContent ? <>{ TextContent }</> : null
-      }
-      <TestModule />
       <div>
         1
         <div>11

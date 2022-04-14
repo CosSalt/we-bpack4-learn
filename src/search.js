@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import logo from './images/logo.jpg'
 import TestModule from './test'
 import { common } from './common'
@@ -49,11 +49,9 @@ const Search  = () => {
 }
 
 const container = document.getElementById('root')
-const root = createRoot(container)
-
 
 const reactRender = () => {
-  root.render(<Search />)
+  ReactDOM.render(<Search />, container)
 }
 
 if(module.hot) {
