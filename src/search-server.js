@@ -9,12 +9,16 @@ const React = require('react')
 const logo = require('./images/logo.jpg')
 const lagetNumber = require('odan-large-number')
 require('./search.less')
-
+const { useState } = React
 // 用useState 会报错
 const Search = () => {
-  const onClick = () => {}
+  // const [state, setState] = useState(0)
+  // const onClick = () => setState(x => x+1)
+  const state = 1
+  const onClick = () => {} 
   return (
     <div className='search-text test'>
+      <div>state: {state}</div>
       <button onClick={onClick}>click12</button>
       <button onClick={onClick}>动态 import</button>
       { lagetNumber(999, 999)}
