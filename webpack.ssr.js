@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const FriendlyErrorsWebpackPlugin =  require('friendly-errors-webpack-plugin')
 
 const entry = {
   "search-server": './src/search-server.js'
@@ -104,6 +105,8 @@ const config = {
     }),
     // 清除dist目录
     new CleanWebpackPlugin(),
+    // 更友好日志输出
+    new FriendlyErrorsWebpackPlugin()
   ],
   optimization: {
     // // 公共包
