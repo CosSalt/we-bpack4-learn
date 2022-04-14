@@ -7,6 +7,7 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
+const FriendlyErrorsWebpackPlugin =  require('friendly-errors-webpack-plugin')
 
 const config = {
   // entry: 打包输入
@@ -21,7 +22,7 @@ const config = {
     filename: '[name]_[chunkhash:8].js', // 占位符默认main
     chunkFilename: '[name]_[chunkhash:8].js', // 中间生成的chunk，如按需加载
   },
-
+  // stats: 'errors-only',
   mode: 'none', // 'development' || 'production' || 'none'
   // loaders: 处理webpack原生不能处理的文件（模块），原生只支持js和json
   module: {
@@ -119,7 +120,8 @@ const config = {
         }
       ]
     }),
-
+    // 日志输出更友好
+    new FriendlyErrorsWebpackPlugin()
   ],
   optimization: {
     // // 公共包

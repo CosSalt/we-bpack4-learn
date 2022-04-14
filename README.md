@@ -9,6 +9,7 @@ eslint 配置没成功 [type](https://nodejs.org/docs/latest-v13.x/api/esm.html#
 ssr 尝试失败了
 > 1. 静态的成功了，但有状态的失败了（用useState）
 > 2. 想到了是因为模版文件里面并没有加载对应的js文件，只有dom文件
+> 3. 能输出html文件，但是没法使用状态管理（useState）以及 没有事件绑定，页面只是一个单纯的html文件，没有讲其挂载到dom上
 
 ### 其它
 [scripts]https://docs.npmjs.com/cli/v8/using-npm/scripts

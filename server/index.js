@@ -20,8 +20,6 @@ function server (port) {
   app.use(express.static('dist')) // 设置静态目录
 
   app.get('/search', (req, res) => {
-    debugger
-    const a = SSR
     const str = renderToString(SSR)
     const htmlStr = renderMarkup(str)
     res.status(200).send(htmlStr)

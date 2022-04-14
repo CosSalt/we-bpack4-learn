@@ -6,6 +6,7 @@ const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
+const FriendlyErrorsWebpackPlugin =  require('friendly-errors-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -107,7 +108,9 @@ const config = {
           global: 'ReactDOM'
         }
       ]
-    })
+    }),
+    // 友好的日志输出
+    new FriendlyErrorsWebpackPlugin()
   ],
   devServer: {
     contentBase: './dist', // 引入一些静态资源文件，如index.html
