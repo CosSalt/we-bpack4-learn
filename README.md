@@ -7,6 +7,8 @@ mini-css-extract-plugin 导致的热更新无效的问题
 package.json 中设置sideEffects没起作用
 eslint 配置没成功 [type](https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling)
 ssr 尝试失败了
+> 1. 静态的成功了，但有状态的失败了（用useState）
+> 2. 想到了是因为模版文件里面并没有加载对应的js文件，只有dom文件
 
 ### 其它
 [scripts]https://docs.npmjs.com/cli/v8/using-npm/scripts
