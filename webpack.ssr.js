@@ -1,15 +1,18 @@
 'use strict';
 
 const path = require('path')
-const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+
+const entry = {
+  "search-server": './src/search-server.js'
+}
 
 const config = {
   // entry: 打包输入
-  entry: {
-    "search-server": './src/search-server.js'
-  },
+  entry,
   // devtool: 'source-map',
   // output: 打包输出位置
   output: {
@@ -51,11 +54,11 @@ const config = {
       {
         test: /\.(png|jpg|gif|jpeg)$/,
         use: [{
-            loader: 'file-loader',
-            options: {
-              name: 'img/[name]_[hash:8].[ext]', // 图片的文件指纹中的hash是内容的hash值
-            }
+          loader: 'file-loader',
+          options: {
+            name: 'img/[name]_[hash:8].[ext]', // 图片的文件指纹中的hash是内容的hash值
           }
+        }
         ]
       },
       {
@@ -66,7 +69,7 @@ const config = {
             name: 'img/[name]_[hash:8].[ext]', // 图片的文件指纹中的hash是内容的hash值
           }
         }
-      ]
+        ]
       }
     ]
   },
@@ -74,7 +77,7 @@ const config = {
   watchOptions: {
     ignored: /node_modules/, // 忽略包的文件监听
   },
-  plugins:[
+  plugins: [
     // css 打包为单独的文件
     new MiniCssExtractPlugin({
       filename: '[name]_[contenthash:8].css'
@@ -83,6 +86,21 @@ const config = {
     new OptimizeCssAssetsWebpackPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano')
+    }),
+    // html
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public/index.html'), // 模版
+      filename: 'index.html', // 打包出来的文件名称
+      chunks: ['vendors', 'commons', ...Object.keys(entry)], // 生成的html要使用哪些chunk
+      inject: true, // 将需要的chunk的相关的js、css等注入到html中
+      minify: { // 压缩, 最好别压缩html里面的注释，在SSR中是基于注释来处理的节点插入
+        html5: true,
+        collapseWhitespace: true,
+        preserveLineBreaks: false,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: false
+      }
     }),
     // 清除dist目录
     new CleanWebpackPlugin(),

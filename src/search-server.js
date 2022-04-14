@@ -8,6 +8,7 @@
 const React = require('react')
 const logo = require('./images/logo.jpg')
 const lagetNumber = require('odan-large-number')
+require('./search.less')
 
 // 用useState 会报错
 const Search = () => {
