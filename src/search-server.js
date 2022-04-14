@@ -16,7 +16,6 @@ const Search = () => {
     <div className='search-text test'>
       <button onClick={onClick}>click12</button>
       <button onClick={onClick}>动态 import</button>
-      state: { state}
       { lagetNumber(999, 999)}
       <div>
         1
