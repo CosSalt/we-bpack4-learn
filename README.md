@@ -5,7 +5,7 @@
 ### 未解决问题
 mini-css-extract-plugin 导致的热更新无效的问题
 package.json 中设置sideEffects没起作用
-eslint 配置没成功
+eslint 配置没成功 [type](https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling)
 
 ### 其它
 [scripts]https://docs.npmjs.com/cli/v8/using-npm/scripts

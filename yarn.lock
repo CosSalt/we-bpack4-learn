@@ -4769,6 +4769,11 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.npmmirror.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
 
+odan-large-number@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/odan-large-number/-/odan-large-number-1.0.2.tgz#7bc2323adecd9218cb189a2ec45bf42a1f5cda81"
+  integrity sha512-x/rY4bNzH/5XvU9GZXLFAX0idB5K5IVTOON8g9a39vGrD/83dVxsIsBmY4fWwV0kbfFBKKjaYfUGeBkmScgzkg==
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.npmmirror.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
