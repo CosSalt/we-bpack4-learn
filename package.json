@@ -5,8 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
+    "build:ssr": "webpack --config webpack.ssr.js",
     "watch": "webpack --config webpack.dev.js --watch",
-    "dev": "webpack-dev-server --config webpack.dev.js --open"
+    "dev": "webpack-dev-server --config webpack.dev.js --open",
+    "ssr:run": " npm run build:ssr && node server/index.js",
+    "ssr": "node server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +39,7 @@
     "webpack-dev-server": "3.3.1"
   },
   "dependencies": {
+    "express": "^4.17.3",
     "odan-large-number": "^1.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
