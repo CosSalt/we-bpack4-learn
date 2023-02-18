@@ -9,3 +9,5 @@ node: v10.21.0
 
 ### 打包命令
 默认读取根目录下的 webpack.config.js，可以通过 ./node_modules/.bin/webpack 来打包
+在webpack3中，modules 还是数组，在webpack4中变成了对象，moduleId由number变成了string [01.bundle.js]('./his/01.bundle.js')
+package.json 中的script 会去读 ./node_modules/.bin 下的命令
