@@ -11,5 +11,13 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js'
   },
-  mode: 'development' // 'development' || 'production' || 'none',
+  mode: 'development', // 'development' || 'production' || 'none',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader'
+      }
+    ]
+  }
 }
