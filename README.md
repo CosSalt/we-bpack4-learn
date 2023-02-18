@@ -6,3 +6,6 @@
 node: v10.21.0
 设置淘宝镜像：npm config set registry https://registry.npmmirror.com
 查看镜像：npm config get registry
+
+### 打包命令
+默认读取根目录下的 webpack.config.js，可以通过 ./node_modules/.bin/webpack 来打包
