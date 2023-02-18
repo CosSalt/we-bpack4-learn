@@ -42,3 +42,13 @@ loader 本身是个函数，接受源文件作为参数，返回转换的结果
 5. HtmlWebpackPlugin 创建 html 文件去承载输出的 bundle
 6. UglifyjsZWebpackPlugin 压缩 JS
 7. ZipWebpackPlugin 将打包的资源生成一个 zip 包
+
+### Mode
+webpack 4 的新参数，用来指定当前的构建环境（production、development、none）,默认值为 production
+通过设置 mode 的值能够通过使用 webpack 的内置函数去触发一些 webpack 的配置
+##### development
+设置 process.env.NODE_ENV 的值为 development, 开启 NamedChunksPlugin 和 NamedModulesPlugin
+##### production
+设置 process.env.NODE_ENV 的值为 production, 开启 FlagDependencyUsagePlugin、FlagIncludedChunksPlugin、ModuleConcatenationPlugin、NoEmitOnErrorsPlugin、OccurenceOrderPlugin、SideEffectsFlagPlugin、TerserPlugin 等
+##### none
+不开启任何优化
