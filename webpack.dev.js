@@ -2,6 +2,7 @@
 
 const path = require('path')
 const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin') // 打包目录清理
 
 module.exports = {
   entry: {
@@ -52,6 +53,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // 设置 hot: true 会自动添加，不用在这里添加了
+    new CleanWebpackPlugin(),
   ],
   devServer: {
     contentBase: './dist',

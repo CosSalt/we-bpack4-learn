@@ -2,9 +2,10 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin') // css 单独文件生成
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin') // css 文件资源压缩
+const HtmlWebpackPlugin = require('html-webpack-plugin') // html 模版处理
+const CleanWebpackPlugin = require('clean-webpack-plugin') // 打包目录清理
 
 module.exports = {
   entry: {
@@ -95,7 +96,8 @@ module.exports = {
         minifyJs: true,
         removeComments: false,
       }
-    })
+    }),
+    new CleanWebpackPlugin(),
   ],
   // // 文件变化监听，默认false
   // watch: true,
