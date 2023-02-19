@@ -1,12 +1,12 @@
 'use strict';
-const { entry, commonPlugins } = require('./webpack.common')
+const { entry, commonPlugins, outputPath } = require('./webpack.common')
 const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
   entry,
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: outputPath,
     filename: '[name].js'
   },
   mode: 'development', // 'development' || 'production' || 'none',

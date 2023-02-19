@@ -6,6 +6,8 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin') // html 模版处理
 const CleanWebpackPlugin = require('clean-webpack-plugin') // 打包目录清理
 
+const outputPath = path.join(__dirname, '../dist')
+
 // 多页面打包
 const getMPA = () => {
   const entry = {}
@@ -48,4 +50,5 @@ const commonPlugins = [
 module.exports = {
   entry,
   commonPlugins,
+  outputPath,
 }

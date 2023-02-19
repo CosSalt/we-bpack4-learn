@@ -3,15 +3,15 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // css 单独文件生成
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin') // css 文件资源压缩
-const { entry, commonPlugins } = require('./webpack.common')
+const { entry, commonPlugins, outputPath } = require('./webpack.common')
 
 module.exports = {
   entry,
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: outputPath,
     filename: '[name]_[chunkhash:8].js'
   },
-  mode: 'production', // 'development' || 'production' || 'none',
+  mode: 'none', // 'development' || 'production' || 'none',
   module: {
     rules: [
       {
@@ -94,4 +94,5 @@ module.exports = {
   //   // 判断文件是否变化是通过不停询问系统制定文件是否发生变化实现的，默认每秒问 1000 次
   //   poll: 1000
   // }
+  // devtool: ''
 }
