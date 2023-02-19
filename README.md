@@ -114,3 +114,15 @@ lib-flexible: 计算根元素上的像素值
 [你知道source map如何帮你定位源码么？](https://blog.51cto.com/u_15490526/5513873)
 [脚本错误量极致优化-让脚本错误一目了然](https://github.com/joeyguo/blog/issues/14)
 [利用sourceMap定位错误实践](https://juejin.cn/post/6882265367251517447)
+
+#### 提取页面公共资源
+
+##### 基础库分离
+将 react、react-dom 等基础库包通过 CDN 引入，不打入 bundle 中, 基础库可以长期使用，通过 CDN 引入能持续受益
+方法: 使用 html-webpack-externals-plugin，这个插件被废弃了
+##### 公共脚本分离
+webpack 4 内置了 SplitChunksPlugin，代替之前的 CommonsChunkPlugin
+chunks 参数说明:
+'async' 异步引入库进行分离（默认）
+'initial' 同步引入库进行分离
+'all': 所有引入库进行分离（推荐）

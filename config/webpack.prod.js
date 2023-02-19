@@ -83,6 +83,17 @@ module.exports = {
     }),
     ...commonPlugins,
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /(react|react-dom)/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  }
   // // 文件变化监听，默认false
   // watch: true,
   // // 只有开启了监听模式watchOptions才有意义
