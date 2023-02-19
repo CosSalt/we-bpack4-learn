@@ -77,3 +77,19 @@ ext: 资源后缀名
 name: 文件名称
 path: 文件的相对路径
 folder: 文件所在文件夹
+
+#### 代码压缩
+##### HTML 压缩
+插件：html-webpack-plugin
+设置压缩参数
+##### CSS 压缩
+css-loader 1.0 之后去掉了压缩参数
+插件: optimize-css-assets-webpack-plugin
+同时使用 cssnano 这个预处理器
+##### JS 压缩
+webpack 4 内置了 uglifyjs-webpack-plugin
+
+##### 其他
+webpack 5更新下插件替换。
+optimize-css-assets-webpack-plugin -> css-minimizer-webpack-plugin
+uglifyjs-webpack-plugin->terser-webpack-plugin
