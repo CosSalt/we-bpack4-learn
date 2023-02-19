@@ -85,7 +85,7 @@ folder: 文件所在文件夹
 ##### CSS 压缩
 css-loader 1.0 之后去掉了压缩参数
 插件: optimize-css-assets-webpack-plugin
-同时使用 cssnano 这个预处理器
+同时使用 cssnano 这个预处理器,不用额外下载，在下载上面那个插件中一起下载了
 ##### JS 压缩
 webpack 4 内置了 uglifyjs-webpack-plugin
 
@@ -93,3 +93,11 @@ webpack 4 内置了 uglifyjs-webpack-plugin
 webpack 5更新下插件替换。
 optimize-css-assets-webpack-plugin -> css-minimizer-webpack-plugin
 uglifyjs-webpack-plugin->terser-webpack-plugin
+
+#### 打包目录清理
+插件：clean-webpack-plugin
+
+#### CSS 兼容性
+兼容性查询：[caniuse](https://caniuse.com/)
+loader: postcss-loader
+autoprefixer
