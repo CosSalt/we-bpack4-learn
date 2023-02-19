@@ -51,11 +51,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(), // 设置 hot: true 会自动添加，不用在这里添加了
   ],
   devServer: {
     contentBase: './dist',
-    hot: true,
+    hot: true, // 设置 hot: true 会自动添加 HotModuleReplacementPlugin 插件
   },
   // 文件变化监听，默认false
   watch: true,
