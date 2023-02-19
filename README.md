@@ -57,3 +57,7 @@ webpack 4 的新参数，用来指定当前的构建环境（production、develo
 package.json 的 scrpits 增加 "dev": "webpack-dev-server --open", --open 表示自动大考浏览器
 用在 devlopment 环境下，
 一般配合 webpack 自带的 HotModuleReplacementPlugin（模块热更新）插件使用
+
+##### 原理
+初始化是，文件进行编译，将将HRM runtime 编译进bundle中，在bundle server 的作用下，客户端能够通过http的形式访问，当文件变更后，HRM Server 通过 socket 的方式推送给 HRM runtime 进行处理，模块热更新会注入 【module.hot】 但代码逻辑没处理就会一直往上冒泡，直到刷新页面
+![原理图]['./docs/imgs/hrm.png']
