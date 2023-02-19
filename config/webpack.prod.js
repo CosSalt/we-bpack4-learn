@@ -94,7 +94,7 @@ module.exports = {
       //   }
       // },
       // 公共引用
-      minSize: 0,
+      minSize: 3000,
       cacheGroups: {
         commons: {
           name: 'commons',
