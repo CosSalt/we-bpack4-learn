@@ -21,7 +21,7 @@ const getMPA = () => {
       htmlWebpackPlugins.push(new HtmlWebpackPlugin({
         template: path.join(__dirname, `../src/pages/${entryName}/index.html`),
         filename: `${entryName}.html`,
-        chunks: [entryName],
+        chunks: [ 'commons', 'vendors', entryName],
         inject: true, // 将打包bundle注入到html中
         minify: {
           html5: true,

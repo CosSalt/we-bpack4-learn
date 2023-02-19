@@ -126,3 +126,4 @@ chunks 参数说明:
 'async' 异步引入库进行分离（默认）
 'initial' 同步引入库进行分离
 'all': 所有引入库进行分离（推荐）
+需要将对应的 chunk 名称放入 HtmlWebpackPlugin 的 chunks 中国
