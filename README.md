@@ -101,3 +101,9 @@ uglifyjs-webpack-plugin->terser-webpack-plugin
 兼容性查询：[caniuse](https://caniuse.com/)
 loader: postcss-loader
 autoprefixer
+
+#### rem
+w3c 对 rem 的定义：font-sze of the root element
+rem 和 px 的对比：rem 是相对单位，px 是绝对单位
+px2rem-loader: 将px转化为rem
+lib-flexible: 计算根元素上的像素值
