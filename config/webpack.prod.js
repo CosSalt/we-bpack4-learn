@@ -94,12 +94,21 @@ module.exports = {
       //   }
       // },
       // 公共引用
-      minSize: 3000,
+      minSize: 0,
       cacheGroups: {
-        commons: {
-          name: 'commons',
+        // 通过不同键值对来配置多个
+        // 基础库
+        vendors: {
+          test: /(react|react-dom)/,
+          // test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
-          minChunks: 3
+          name: 'vendors', // 可以不传
+        },
+        // 公共饮用
+        commons: {
+          chunks: 'all',
+          minChunks: 2,
+          name: 'commons', // 可以不传
         }
       }
     }
