@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -48,6 +49,13 @@ module.exports = {
         use: 'file-loader'
       }
     ]
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    contentBase: './dist',
+    hot: true,
   },
   // 文件变化监听，默认false
   watch: true,

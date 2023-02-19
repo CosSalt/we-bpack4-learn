@@ -52,3 +52,8 @@ webpack 4 的新参数，用来指定当前的构建环境（production、develo
 设置 process.env.NODE_ENV 的值为 production, 开启 FlagDependencyUsagePlugin、FlagIncludedChunksPlugin、ModuleConcatenationPlugin、NoEmitOnErrorsPlugin、OccurenceOrderPlugin、SideEffectsFlagPlugin、TerserPlugin 等
 ##### none
 不开启任何优化
+
+#### webpack-dev-server (WDS)
+package.json 的 scrpits 增加 "dev": "webpack-dev-server --open", --open 表示自动大考浏览器
+用在 devlopment 环境下，
+一般配合 webpack 自带的 HotModuleReplacementPlugin（模块热更新）插件使用
