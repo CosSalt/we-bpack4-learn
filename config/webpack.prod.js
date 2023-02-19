@@ -85,11 +85,21 @@ module.exports = {
   ],
   optimization: {
     splitChunks: {
+      // 基础库
+      // cacheGroups: {
+      //   commons: {
+      //     test: /(react|react-dom)/,
+      //     name: 'vendors',
+      //     chunks: 'all'
+      //   }
+      // },
+      // 公共引用
+      minSize: 0,
       cacheGroups: {
         commons: {
-          test: /(react|react-dom)/,
-          name: 'vendors',
-          chunks: 'all'
+          name: 'commons',
+          chunks: 'all',
+          minChunks: 2
         }
       }
     }

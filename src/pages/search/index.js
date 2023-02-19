@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import ReactDom from 'react-dom'
+import { test } from '../../utils'
 import logo from '../../images/logo.png'
 import './search.less'
+
+test('search')
 
 const Search = () => {
   const [count, setCount] = useState(0)
