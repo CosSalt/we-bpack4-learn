@@ -5,7 +5,7 @@ import './search.less'
 
 const Search = () => {
   const [count, setCount] = useState(0)
-  if(count > 4) throw Error('test')
+  if(count >= 1) throw Error('test')
   return <div className="search-text">
     <div>Search Text</div>
     <img src={logo} />

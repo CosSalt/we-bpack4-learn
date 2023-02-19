@@ -109,4 +109,8 @@ px2rem-loader: 将px转化为rem
 lib-flexible: 计算根元素上的像素值
 
 #### source map
-文章： [source map](https://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
+文章： 
+[source map](https://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
+[你知道source map如何帮你定位源码么？](https://blog.51cto.com/u_15490526/5513873)
+[脚本错误量极致优化-让脚本错误一目了然](https://github.com/joeyguo/blog/issues/14)
+[利用sourceMap定位错误实践](https://juejin.cn/post/6882265367251517447)
