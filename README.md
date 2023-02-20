@@ -9,7 +9,7 @@ node: v10.21.0
 
 ### 打包命令
 默认读取根目录下的 webpack.config.js，可以通过 ./node_modules/.bin/webpack 来打包
-在webpack3中，modules 还是数组，在webpack4中变成了对象，moduleId由number变成了string [01.bundle.js]('./his/01.bundle.js')
+在webpack3中，modules 还是数组，在webpack4中变成了对象(也有数组)，moduleId由number变成了string [01.bundle.js]('./his/01.bundle.js')
 package.json 中的scripts 会去读 ./node_modules/.bin 下的命令
 
 ### webpack 基础用法
@@ -131,3 +131,13 @@ chunks 参数说明:
 #### Tree-shaking
 只能在 ESM（ES6语法） 下使用，不支持在 CJS 下使用
 mode: 'development' 下会开启，为 'none' 时不会开启
+
+#### Scope Hoisting
+大量函数闭包包裹代码，导致体积增大（模块越多越明显）
+运行代码时穿件的函数作用域变多，内存开销变大
+
+##### 原理
+将所有模块的代码按照引用顺序放在一个函数作用域里，然后适当的重命名一些变量以防止变量名冲突
+##### 模块转化
+被 webpack 转换后的模块会带上一层包裹
+import 会被转化为 __webpack_require__

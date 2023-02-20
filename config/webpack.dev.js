@@ -1,7 +1,7 @@
 'use strict';
+const webpack = ruquire('webpack')
 const { entry, commonPlugins, outputPath } = require('./webpack.common')
 const path = require('path')
-const webpack = require('webpack')
 
 module.exports = {
   entry,

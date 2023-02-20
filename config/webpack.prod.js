@@ -1,5 +1,6 @@
 'use strict';
 
+const webpack = require('webpack')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // css 单独文件生成
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin') // css 文件资源压缩
@@ -11,7 +12,7 @@ module.exports = {
     path: outputPath,
     filename: '[name]_[chunkhash:8].js'
   },
-  mode: 'production', // 'development' || 'production' || 'none',
+  mode: 'none', // 'development' || 'production' || 'none',
   module: {
     rules: [
       {
@@ -82,6 +83,7 @@ module.exports = {
       cssProcessor: require('cssnano')
     }),
     ...commonPlugins,
+    new webpack.optimize.ModuleConcatenationPlugin(), // 手动开启 scope hositing
   ],
   optimization: {
     splitChunks: {
