@@ -141,3 +141,10 @@ mode: 'development' 下会开启，为 'none' 时不会开启
 ##### 模块转化
 被 webpack 转换后的模块会带上一层包裹
 import 会被转化为 __webpack_require__
+
+#### 代码分割
+1. 抽离相同代码到一个共享块（SplitChunksPlugin）
+2. 懒加载，使得初始下载的代码更小，用到了再去加载对应的代码
+##### 懒加载方式
+CommonJS: requires.ensure
+ES6: 动态 import （目前还没有原生支持，需要 babel 转换（@babel/plugin-syntax-dynamic-import））

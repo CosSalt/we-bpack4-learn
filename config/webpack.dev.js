@@ -1,5 +1,5 @@
 'use strict';
-const webpack = ruquire('webpack')
+const webpack = require('webpack')
 const { entry, commonPlugins, outputPath } = require('./webpack.common')
 const path = require('path')
 
