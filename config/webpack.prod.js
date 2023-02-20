@@ -12,7 +12,7 @@ module.exports = {
     path: outputPath,
     filename: '[name]_[chunkhash:8].js'
   },
-  mode: 'none', // 'development' || 'production' || 'none',
+  mode: 'production', // 'development' || 'production' || 'none',
   module: {
     rules: [
       {
@@ -83,7 +83,7 @@ module.exports = {
       cssProcessor: require('cssnano')
     }),
     ...commonPlugins,
-    new webpack.optimize.ModuleConcatenationPlugin(), // 手动开启 scope hositing
+    // new webpack.optimize.ModuleConcatenationPlugin(), // 手动开启 scope hositing
   ],
   optimization: {
     splitChunks: {
