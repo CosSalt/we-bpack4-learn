@@ -7,13 +7,13 @@ module.exports = {
   entry,
   output: {
     path: outputPath,
-    filename: '[name].js'
+    filename: '[name].js',
   },
   mode: 'development', // 'development' || 'production' || 'none',
   module: {
     rules: [
       ...rules,
-    ]
+    ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // 设置 hot: true 会自动添加，不用在这里添加了
@@ -34,5 +34,5 @@ module.exports = {
     // 判断文件是否变化是通过不停询问系统制定文件是否发生变化实现的，默认每秒问 1000 次
     poll: 1000
   },
-  devtool: 'eval-source-map'
+  devtool: 'eval-source-map',
 }

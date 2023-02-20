@@ -148,3 +148,24 @@ import 会被转化为 __webpack_require__
 ##### 懒加载方式
 CommonJS: requires.ensure
 ES6: 动态 import （目前还没有原生支持，需要 babel 转换（@babel/plugin-syntax-dynamic-import））
+
+#### ESlint
+用作js代码语法检查
+[ESLint](http://eslint.cn/docs/user-guide/getting-started)
+[前端代码规范工具ESLint和Prettier](https://blog.csdn.net/yi_zongjishi/article/details/125185269)
+##### 使用
+
+```json
+{
+  "rules": {
+    "no-console": "off",
+    "indent": ["error", 4],
+    "semi": ["error", "always"],
+  }
+}
+```
+关闭规则："off" 或 0
+开启规则："warn" 或 1，不会导致程序退出
+开启规则："error" 或 2，当被触发时，程序会退出
+对于常规的直接用数字或字符串，如 "no-console": "off"
+对于有额外参数的可以使用数组字面量，如 "indent": ["error", 4]，第一个参数是规则级别，第二个参数是参数
