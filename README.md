@@ -169,3 +169,26 @@ ES6: 动态 import （目前还没有原生支持，需要 babel 转换（@babel
 开启规则："error" 或 2，当被触发时，程序会退出
 对于常规的直接用数字或字符串，如 "no-console": "off"
 对于有额外参数的可以使用数组字面量，如 "indent": ["error", 4]，第一个参数是规则级别，第二个参数是参数
+
+### SSR
+```json
+{
+  vendors: {
+    test: /(react|react-dom)/,
+    // test: /[\\/]node_modules[\\/]/,
+    chunks: 'all',
+    name: 'vendors', // 可以不传
+  }
+}
+```
+上述配置存在否导致了和课程的打包结果不一致，存在的时候，拿到的文件内容为空， commit: 2436cc99de8a
+
+[03.search-server]('./his/03.search-server.js')
+```javascript
+return __webpack_require__(__webpack_require__.s = 0);
+```
+[04.search-server]('./his/04.search-server.js')
+```javascript
+return checkDeferredModules();
+```
+
