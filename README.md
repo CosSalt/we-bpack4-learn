@@ -191,4 +191,7 @@ return __webpack_require__(__webpack_require__.s = 0);
 ```javascript
 return checkDeferredModules();
 ```
+问题分析，因为分离包的原因，react & react-dom 是当前包的前置依赖，所以必须等到这个分离包存在才可以保证程序继续执行，猜想解决方式是让分离包不是第一个引用即可(没成功)
 
+##### 文章
+[webpack的加载](https://segmentfault.com/a/1190000040942526)

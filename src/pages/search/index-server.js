@@ -1,7 +1,9 @@
+
+import { fn } from './a'
 import React, { useState, useCallback } from 'react'
 // import logo from '../../images/logo.png'
 // import './search.less'
-
+fn()
 const Search = () => {
   const [count, setCount] = useState(0)
   const [list, setList] = useState([])
