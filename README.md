@@ -9,7 +9,7 @@ node: v10.21.0
 
 ### 打包命令
 默认读取根目录下的 webpack.config.js，可以通过 ./node_modules/.bin/webpack 来打包
-在webpack3中，modules 还是数组，在webpack4中变成了对象(也有数组)，moduleId由number变成了string [01.bundle.js]('./his/01.bundle.js')
+在webpack3中，modules 还是数组，在webpack4中变成了对象(也有数组)，moduleId由number变成了string [01.bundle.js](./his/01.bundle.js)
 package.json 中的scripts 会去读 ./node_modules/.bin 下的命令
 
 ### webpack 基础用法
@@ -60,7 +60,7 @@ package.json 的 scrpits 增加 "dev": "webpack-dev-server --open", --open 表�
 
 ##### 原理
 初始化是，文件进行编译，将将HRM runtime 编译进bundle中，在bundle server 的作用下，客户端能够通过http的形式访问，当文件变更后，HRM Server 通过 socket 的方式推送给 HRM runtime 进行处理，模块热更新会注入 【module.hot】 但代码逻辑没处理就会一直往上冒泡，直到刷新页面
-![原理图]['./docs/imgs/hrm.png']
+![原理](./docs/imgs/hrm.png)
 
 #### 文件指纹
 "[name].[hash:8].[chunkhash:8].[contenthash:8].js"
@@ -171,7 +171,7 @@ ES6: 动态 import （目前还没有原生支持，需要 babel 转换（@babel
 对于有额外参数的可以使用数组字面量，如 "indent": ["error", 4]，第一个参数是规则级别，第二个参数是参数
 
 ### SSR
-```json
+```javascript
 {
   vendors: {
     test: /(react|react-dom)/,
@@ -183,11 +183,11 @@ ES6: 动态 import （目前还没有原生支持，需要 babel 转换（@babel
 ```
 上述配置存在否导致了和课程的打包结果不一致，存在的时候，拿到的文件内容为空， commit: 2436cc99de8a
 
-[03.search-server]('./his/03.search-server.js')
+[03.search-server](./his/03.search-server.js)
 ```javascript
 return __webpack_require__(__webpack_require__.s = 0);
 ```
-[04.search-server]('./his/04.search-server.js')
+[04.search-server](./his/04.search-server.js)
 ```javascript
 return checkDeferredModules();
 ```
