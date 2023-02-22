@@ -30,12 +30,12 @@ module.exports = {
       cacheGroups: {
         // 通过不同键值对来配置多个
         // 基础库
-        vendors: {
-          test: /(react|react-dom)/,
-          // test: /[\\/]node_modules[\\/]/,
-          chunks: 'all',
-          name: 'vendors', // 可以不传
-        },
+        // vendors: {
+        //   test: /(react|react-dom)/,
+        //   // test: /[\\/]node_modules[\\/]/,
+        //   chunks: 'all',
+        //   name: 'vendors', // 可以不传
+        // },
         // 公共饮用
         commons: {
           chunks: 'all',

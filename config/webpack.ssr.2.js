@@ -160,17 +160,17 @@ module.exports = {
         //     })
         // }    
     ].concat(htmlWebpackPlugins),
-    // optimization: {
-    //     splitChunks: {
-    //         minSize: 0,
-    //         cacheGroups: {
-    //             commons: {
-    //                 name: 'commons',
-    //                 chunks: 'all',
-    //                 minChunks: 2
-    //             }
-    //         }
-    //     }
-    // }
+    optimization: {
+        splitChunks: {
+            minSize: 0,
+            cacheGroups: {
+                commons: {
+                    name: 'commons',
+                    chunks: 'all',
+                    minChunks: 2
+                }
+            }
+        }
+    },
     stats: 'errors-only'
 };
