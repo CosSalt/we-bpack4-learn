@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: outputPath,
     filename: '[name]-server.js',
-    // libraryTarget: 'umd',
+    libraryTarget: 'umd',
   },
   mode: 'none', // 'development' || 'production' || 'none',
   module: {

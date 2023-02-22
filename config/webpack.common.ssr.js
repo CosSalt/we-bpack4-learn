@@ -42,7 +42,7 @@ const getMPA = () => {
 }
 const { entry, htmlWebpackPlugins } = getMPA()
 const commonPlugins = [
-  // ...htmlWebpackPlugins,
+  ...htmlWebpackPlugins,
   new MiniCssExtractPlugin({
     filename: '[name]_[contenthash:8].css'
   }),

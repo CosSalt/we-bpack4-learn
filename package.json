@@ -9,6 +9,7 @@
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --config config/webpack.dev.js --open",
     "build:ssr": "webpack --config config/webpack.ssr.js",
+    "build:ssr2": "webpack --config config/webpack.ssr.2.js",
     "server": "node server/index.js"
   },
   "repository": {
