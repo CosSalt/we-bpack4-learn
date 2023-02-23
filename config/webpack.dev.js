@@ -22,6 +22,7 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     hot: true, // 设置 hot: true 会自动添加 HotModuleReplacementPlugin 插件
+    stats: 'errors-only',
   },
   // 文件变化监听，默认false
   watch: true,

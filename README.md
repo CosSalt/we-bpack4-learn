@@ -214,3 +214,11 @@ externals: nodeExternals(),
 [服务端渲染（SSR）](https://v3.umijs.org/zh-CN/docs/ssr)
 [React Hooks 在 SSR 模式下常见问题及解决方案](https://zhuanlan.zhihu.com/p/373002592)
 [服务端渲染SSR及React实现](https://www.jianshu.com/p/d78cbfd1f49b)
+
+#### 统计信息 stats
+errors-only: 只有发生错误时输出
+minimal: 只有发生错误或由新的编译时输出
+none: 没有输出
+normal: 标准输出
+verbose: 全部输出(默认值)
+
