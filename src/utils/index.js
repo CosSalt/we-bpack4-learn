@@ -1,3 +1,1 @@
-export const test = (key = '') => {
-  return 'test' + key
-}
+export const test = (key = '') => 'test' + key
