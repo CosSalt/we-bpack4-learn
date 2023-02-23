@@ -193,6 +193,9 @@ return checkDeferredModules();
 ```
 问题分析，因为分离包的原因，react & react-dom 是当前包的前置依赖，所以必须等到这个分离包存在才可以保证程序继续执行，猜想解决方式是让分离包不是第一个引用即可(没成功)
 
+react react-dom 版本由 16.8.6 换成 16.14.0
+useState 这种hooks没法使用，原因待查
+
 ##### 文章
 [webpack的加载](https://segmentfault.com/a/1190000040942526)
 [服务端渲染（SSR）](https://v3.umijs.org/zh-CN/docs/ssr)

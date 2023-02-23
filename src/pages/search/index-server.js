@@ -1,10 +1,11 @@
-const { fn } = require('./a')
+// const { fn } = require('./a')
 const React = require('react')
 const logo = require('../../images/logo.png')
 require('./search.less')
-// const { useState, useCallback } = React
 
-fn()
+const { useState, useCallback } = React
+
+// fn()
 const Search = () => {
   const count = 0
   // const [count, setCount] = useState(0)
@@ -34,6 +35,8 @@ const Search = () => {
   </div>)
 }
 
-module.exports = <Search />
+const Index = () => <Search />
+
+module.exports = <Index />
 
 // export default <Search />
