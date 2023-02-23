@@ -1,8 +1,9 @@
+const { fn } = require('./a')
+const React = require('react')
+const logo = require('../../images/logo.png')
+require('./search.less')
+const { useState, useCallback } = React
 
-import { fn } from './a'
-import React, { useState, useCallback } from 'react'
-// import logo from '../../images/logo.png'
-// import './search.less'
 fn()
 const Search = () => {
   const [count, setCount] = useState(0)
@@ -23,7 +24,7 @@ const Search = () => {
   // console.log('TextComp', TextComp)
   return <div className="search-text">
     <div>Search Text</div>
-    {/* <img src={logo} /> */}
+    <img src={logo} />
     <div onClick={onClick}>count: {count}</div>
     <div>
       {/* { TextComp?.[0] } */}

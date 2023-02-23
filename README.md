@@ -195,3 +195,6 @@ return checkDeferredModules();
 
 ##### 文章
 [webpack的加载](https://segmentfault.com/a/1190000040942526)
+[服务端渲染（SSR）](https://v3.umijs.org/zh-CN/docs/ssr)
+[React Hooks 在 SSR 模式下常见问题及解决方案](https://zhuanlan.zhihu.com/p/373002592)
+[服务端渲染SSR及React实现](https://www.jianshu.com/p/d78cbfd1f49b)
