@@ -9,7 +9,9 @@ module.exports = {
     libraryTarget: 'umd',
   },
   mode: 'none', // 'development' || 'production' || 'none',
-  // externals: [nodeExternals()],
+  externals: [nodeExternals({
+    // allowlist: ['react', 'react-dom']
+  })],
   module: {
     rules: [...rules],
   },

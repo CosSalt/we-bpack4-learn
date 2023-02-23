@@ -207,6 +207,7 @@ externals: nodeExternals(),
 [Invalid hook call. Hooks can only be called inside of the body of a function component](https://github.com/vercel/next.js/issues/7626)
 [webpack-node-externals](https://github.com/liady/webpack-node-externals)
 
+再出问题，nodeExternals 导致错误 Uncaught ReferenceError: require is not defined
 
 ##### 文章
 [webpack的加载](https://segmentfault.com/a/1190000040942526)
