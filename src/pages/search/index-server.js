@@ -2,13 +2,14 @@ const { fn } = require('./a')
 const React = require('react')
 const logo = require('../../images/logo.png')
 require('./search.less')
-const { useState, useCallback } = React
+// const { useState, useCallback } = React
 
 fn()
 const Search = () => {
-  const [count, setCount] = useState(0)
-  const [list, setList] = useState([])
-  const [TextComp, setTextComp] = useState()
+  const count = 0
+  // const [count, setCount] = useState(0)
+  // const [list, setList] = useState([])
+  // const [TextComp, setTextComp] = useState()
   // const loadComponent = useCallback(() => {
   //   import('./text').then((res) => {
   //     const { default: Text } = res
@@ -17,12 +18,12 @@ const Search = () => {
   //     setTextComp(Text)
   //   })
   // }, [])
-  const onClick = useCallback(() => {
+  const onClick = () => {
     setCount(count + 1);
     loadComponent();
-  }, [])
+  }
   // console.log('TextComp', TextComp)
-  return <div className="search-text">
+  return (<div className="search-text">
     <div>Search Text</div>
     <img src={logo} />
     <div onClick={onClick}>count: {count}</div>
@@ -30,7 +31,7 @@ const Search = () => {
       {/* { TextComp?.[0] } */}
       {/* {!!TextComp && <TextComp /> } */}
     </div>
-  </div>
+  </div>)
 }
 
 module.exports = <Search />
