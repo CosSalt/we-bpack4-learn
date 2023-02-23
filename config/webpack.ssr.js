@@ -9,7 +9,7 @@ module.exports = {
     libraryTarget: 'umd',
   },
   mode: 'none', // 'development' || 'production' || 'none',
-  externals: [nodeExternals()],
+  // externals: [nodeExternals()],
   module: {
     rules: [...rules],
   },

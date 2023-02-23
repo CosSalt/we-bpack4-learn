@@ -7,8 +7,8 @@ const { useState, useCallback } = React
 
 // fn()
 const Search = () => {
-  // const count = 0
-  const [count, setCount] = useState(0)
+  const count = 0
+  // const [count, setCount] = useState(0)
   // const [list, setList] = useState([])
   // const [TextComp, setTextComp] = useState()
   // const loadComponent = useCallback(() => {
