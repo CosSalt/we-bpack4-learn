@@ -196,6 +196,18 @@ return checkDeferredModules();
 react react-dom 版本由 16.8.6 换成 16.14.0
 useState 这种hooks没法使用，原因待查
 
+##### 其他
+for webpack 5, 需要在webpack配置文件中添加两个配置参数
+target: 'node',
+externals: nodeExternals(),
+否则打出来的文件将无法在node端运行，回报错
+（上述待验证）
+
+##### 解决 useState 报错问题
+[Invalid hook call. Hooks can only be called inside of the body of a function component](https://github.com/vercel/next.js/issues/7626)
+[webpack-node-externals](https://github.com/liady/webpack-node-externals)
+
+
 ##### 文章
 [webpack的加载](https://segmentfault.com/a/1190000040942526)
 [服务端渲染（SSR）](https://v3.umijs.org/zh-CN/docs/ssr)

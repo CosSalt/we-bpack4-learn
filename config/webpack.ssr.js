@@ -1,4 +1,5 @@
 const { entry, commonPlugins, outputPath, rules } = require('./webpack.common.ssr')
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry,
@@ -8,6 +9,7 @@ module.exports = {
     libraryTarget: 'umd',
   },
   mode: 'none', // 'development' || 'production' || 'none',
+  externals: [nodeExternals()],
   module: {
     rules: [...rules],
   },
