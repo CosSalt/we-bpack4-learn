@@ -13,8 +13,12 @@ const SSR = require('../dist/search-server')
 console.log('SSR', JSON.stringify(SSR))
 
 const template = fs.readFileSync(path.join(__dirname, '../dist/search.html'), 'utf-8')
+const data = require('./data.json')
 const renderMarkup = (str) => {
-  return template.replace('<!--HTML_PLACEHOLDER-->', str)
+  const dataStr = JSON.stringify(data)
+  return template.replace('<!--HTML_PLACEHOLDER-->', str).replace('<!--INITAL_DATA_PLACHOLDER-->',
+    `<script>window.__inital_data=${dataStr}</script>`
+  )
 }
 
 const server = (port) => {
