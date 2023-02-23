@@ -224,3 +224,6 @@ verbose: 全部输出(默认值)
 
 插件：friendly-errors-webpack-plugin
 
+#### 获取构建异常
+获取错误码：echo $?
+0: 成功，回调函数中, err 为 null; 非 0 表示执行失败, 回调函数中 err 不为 null, err.code 就是传给 exit 的数字

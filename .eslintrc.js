@@ -13,6 +13,7 @@ module.exports = {
     "eol-last": "off",
     "semi": "off",
     "no-console": 0,
+    "func-names": 0,
   },
   "env": {
     "browser": true,
