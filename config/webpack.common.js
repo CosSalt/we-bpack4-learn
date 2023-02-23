@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin') // html 模版处理
 const CleanWebpackPlugin = require('clean-webpack-plugin') // 打包目录清理
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // css 单独文件生成
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin') // css 文件资源压缩
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 const outputPath = path.join(__dirname, '../dist')
 
@@ -54,6 +55,7 @@ const commonPlugins = [
     cssProcessor: require('cssnano')
   }),
   new CleanWebpackPlugin(),
+  new FriendlyErrorsWebpackPlugin(),
 ]
 
 // rules 
@@ -125,4 +127,5 @@ module.exports = {
   commonPlugins,
   outputPath,
   rules,
+
 }
