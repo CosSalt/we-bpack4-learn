@@ -1,5 +1,5 @@
-const { entry, commonPlugins, outputPath, rules } = require('./webpack.common.ssr')
 const nodeExternals = require('webpack-node-externals');
+const {entry, commonPlugins, outputPath, rules} = require('./webpack.common.ssr')
 
 module.exports = {
   entry,
