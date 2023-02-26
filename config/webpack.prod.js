@@ -4,7 +4,10 @@ const webpack = require('webpack')
 const path = require('path')
 const { entry, commonPlugins, outputPath, rules } = require('./webpack.common')
 
-module.exports = {
+const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
+
+const smp = new SpeedMeasureWebpackPlugin()
+module.exports = smp.wrap({
   entry,
   output: {
     path: outputPath,
@@ -60,4 +63,4 @@ module.exports = {
   //   poll: 1000
   // },
   // stats: 'errors-only'
-}
+})

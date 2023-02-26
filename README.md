@@ -227,3 +227,13 @@ verbose: 全部输出(默认值)
 #### 获取构建异常
 获取错误码：echo $?
 0: 成功，回调函数中, err 为 null; 非 0 表示执行失败, 回调函数中 err 不为 null, err.code 就是传给 exit 的数字
+
+#### 构建速度分析
+插件: speed-measure-webpack-plugin // 可以看到每个 loader 和插件执行耗时
+使用
+``` nodejs
+const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
+const smp = new SpeedMeasureWebpackPlugin()
+module.exports = smp.wrap(config)
+
+```
