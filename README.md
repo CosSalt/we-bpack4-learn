@@ -246,3 +246,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 V8 带来的优化，默认使用更快的 md4 hash 算法（代替 md5）
 webpack AST 可以直接从 loader 传递给 AST，减少解析时间
 使用字符串方法代替正则表达式
+2. 使用【多进程/多实例】解析构建
+HappyPack: 每次 webpack 解析一个模块，HappyPack 会将它及它的依赖分配给 worker 线程中
+thread-loader: webpack 提供，每次 webpack 解析一个模块，thread-loader 会将它和它的依赖分配给 worker 线程中
+
