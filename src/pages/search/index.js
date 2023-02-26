@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import React, { useState, useCallback } from 'react'
 import ReactDom from 'react-dom'
 import { test } from '../../utils'
