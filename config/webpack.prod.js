@@ -59,5 +59,5 @@ module.exports = {
   //   // 判断文件是否变化是通过不停询问系统制定文件是否发生变化实现的，默认每秒问 1000 次
   //   poll: 1000
   // },
-  stats: 'errors-only'
+  // stats: 'errors-only'
 }
