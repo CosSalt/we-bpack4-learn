@@ -73,7 +73,7 @@ const rules = [
     test: /\.js$/,
     use: [
       'babel-loader',
-      'eslint-loader',
+      // 'eslint-loader',
     ]
   },
   {
