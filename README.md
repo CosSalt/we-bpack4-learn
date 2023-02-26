@@ -240,3 +240,9 @@ module.exports = smp.wrap(config)
 #### 构建体积分析
 插件：webpack-bundle-analyzer // 构建完了会在 8888 端口展示
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+
+#### 提升构建速度
+1. 使用更高版本的 webpack 和 Node.js // 新版本带了更多的默认优化以及底层优化
+V8 带来的优化，默认使用更快的 md4 hash 算法（代替 md5）
+webpack AST 可以直接从 loader 传递给 AST，减少解析时间
+使用字符串方法代替正则表达式
