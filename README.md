@@ -237,3 +237,6 @@ const smp = new SpeedMeasureWebpackPlugin()
 module.exports = smp.wrap(config)
 
 ```
+#### 构建体积分析
+插件：webpack-bundle-analyzer // 构建完了会在 8888 端口展示
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')

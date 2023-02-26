@@ -5,6 +5,7 @@ const path = require('path')
 const { entry, commonPlugins, outputPath, rules } = require('./webpack.common')
 
 const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const smp = new SpeedMeasureWebpackPlugin()
 module.exports = smp.wrap({
@@ -19,6 +20,7 @@ module.exports = smp.wrap({
   },
   plugins: [
     ...commonPlugins,
+    new BundleAnalyzerPlugin(),
     // new webpack.optimize.ModuleConcatenationPlugin(), // 手动开启 scope hositing
   ],
   optimization: {
