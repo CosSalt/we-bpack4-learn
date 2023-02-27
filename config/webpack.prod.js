@@ -56,6 +56,7 @@ module.exports = smp.wrap({
     minimizer: [
       new TerserWebpackPlugin({
         parallel: true,
+        cache: true,
       })
     ]
   },
