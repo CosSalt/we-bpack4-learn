@@ -20,6 +20,9 @@ module.exports = smp.wrap({
   plugins: [
     ...commonPlugins,
     // new webpack.optimize.ModuleConcatenationPlugin(), // 手动开启 scope hositing
+    new webpack.DllReferencePlugin({
+      manifest: require('../build/library/library.json')
+    })
   ],
   optimization: {
     splitChunks: {
