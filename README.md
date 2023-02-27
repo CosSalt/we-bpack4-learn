@@ -276,3 +276,10 @@ thread-loader
 预编译资源模块
 思路：将 react、react-dom、redux、react-readux 基础包和业务基础包打包成一个文件
 方法：使用 DLLPlugin 进行分包，DllReferencePlugin 对 manifest.json 引用
+
+5. 缓存
+目的：提升二次构建速度
+思路：
+babel-loader 开启缓存
+terser-webpack-plugin 开启缓存
+使用 cache-loader 或者 harrd-source-webpack-plugin

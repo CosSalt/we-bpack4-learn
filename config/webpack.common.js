@@ -81,7 +81,7 @@ const rules = [
           workers: 3
         }
       },
-      'babel-loader',
+      'babel-loader?cacheDirectory=true',
       // 'happypack/loader',
       // 'eslint-loader', 
     ]
