@@ -47,9 +47,9 @@ const getMPA = () => {
 const { entry, htmlWebpackPlugins } = getMPA()
 const commonPlugins = [
   ...htmlWebpackPlugins,
-  new HappPack({
-    loaders: ['babel-loader']
-  }),
+  // new HappPack({
+  //   loaders: ['babel-loader']
+  // }),
   new MiniCssExtractPlugin({
     filename: '[name]_[contenthash:8].css'
   }),
@@ -75,8 +75,14 @@ const rules = [
   {
     test: /\.js$/,
     use: [
-      // 'babel-loader',
-      'happypack/loader',
+      {
+        loader: 'thread-loader',
+        options: {
+          workers: 3
+        }
+      },
+      'babel-loader',
+      // 'happypack/loader',
       // 'eslint-loader', 
     ]
   },

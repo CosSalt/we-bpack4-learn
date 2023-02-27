@@ -251,6 +251,8 @@ HappyPack: 每次 webpack 解析一个模块，HappyPack 会将它及它的依�
 thread-loader: webpack 提供，每次 webpack 解析一个模块，thread-loader 会将它和它的依赖分配给 worker 线程中
 ##### 测试
 6个文件用时：4.8 secs
-(happy-pack)[https://www.npmjs.com/package/happypack]
+(happypack)[https://www.npmjs.com/package/happypack]
 用时: 4.29 secs
 文件太小没能体现出太多的优势
+thread-loader
+用时：3.9 secs
