@@ -11,6 +11,8 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const HappPack = require('happypack') // 多线程打包
 const outputPath = path.join(__dirname, '../dist')
 
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin') // 模块缓存插件
+
 // 多页面打包
 const getMPA = () => {
   const entry = {}
@@ -59,6 +61,7 @@ const commonPlugins = [
   }),
   new CleanWebpackPlugin(),
   new FriendlyErrorsWebpackPlugin(),
+  new HardSourceWebpackPlugin(),
   // 错误捕获插件
   function () {
     this.hooks.done.tap('done', (stats) => {
