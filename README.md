@@ -263,3 +263,16 @@ thread-loader
 1. parallel-uglify-plugin
 2. uglifyjs-webpack-plugin
 3. terser-webpack-plugin(webpack 4.0 推荐使用，相对于uglifyjs-webpack-plugin支持压缩es6)
+
+4. 分包
+思路1：
+将 react、react-dom 基础包通过cdn 引入，不打入 bundle 中
+插件：html-webpack-externals-plugin (已经被废弃了)
+缺点：会引入很多script标签，写代码时类型提醒不够好（感觉可以在本地再引入下对应的包）
+思路2: 
+通过 split-chunk 分离基础包
+缺点：每次编译都会分析，浪费时间
+思路3:
+预编译资源模块
+思路：将 react、react-dom、redux、react-readux 基础包和业务基础包打包成一个文件
+方法：使用 DLLPlugin 进行分包，DllReferencePlugin 对 manifest.json 引用

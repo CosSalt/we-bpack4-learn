@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config config/webpack.prod.js",
+    "dll": "webpack --config config/webpack.dll.js",
     "analyzer": "webpack --config config/webpack.analyzer.js",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --config config/webpack.dev.js --open",
