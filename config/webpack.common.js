@@ -72,11 +72,12 @@ const commonPlugins = [
     })
   },
 ]
-
+console.log('ssss', path.resolve('src'))
 // rules
 const rules = [
   {
     test: /\.js$/,
+    include: path.resolve('src'), // 这里不是 ../src，resolve 是以工作目录为基础
     use: [
       {
         loader: 'thread-loader',

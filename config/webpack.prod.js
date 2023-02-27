@@ -60,6 +60,14 @@ module.exports = smp.wrap({
       })
     ]
   },
+  resolve: {
+    alias: {
+      'react': path.resolve(__dirname, '../node_modules/react/umd/react.production.min.js'),
+      'react-dom': path.resolve(__dirname, '../node_modules/react-dom/umd/react-dom.production.min.js'),
+    },
+    extensions: ['.js'],
+    mainFields: ['main'],
+  }
   // // 文件变化监听，默认false
   // watch: true,
   // // 只有开启了监听模式watchOptions才有意义

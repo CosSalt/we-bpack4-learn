@@ -287,3 +287,8 @@ terser-webpack-plugin 开启缓存
 
 6. 缩小构建目标
 目的：尽可能少的构建模块，比如 babel-loader 不解析 node_modules
+减少文件搜索范围：
+优化 resolve.modules 配置（减少模块搜索层级）
+优化 resolve.mainFields 配置
+优化 resolve.extensions 配置
+合理使用 alias
