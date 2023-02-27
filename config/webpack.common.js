@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin') // 打包目录清理
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // css 单独文件生成
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin') // css 文件资源压缩
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-
+const HappPack = require('happypack') // 多线程打包
 const outputPath = path.join(__dirname, '../dist')
 
 // 多页面打包
@@ -47,6 +47,9 @@ const getMPA = () => {
 const { entry, htmlWebpackPlugins } = getMPA()
 const commonPlugins = [
   ...htmlWebpackPlugins,
+  new HappPack({
+    loaders: ['babel-loader']
+  }),
   new MiniCssExtractPlugin({
     filename: '[name]_[contenthash:8].css'
   }),
@@ -72,8 +75,9 @@ const rules = [
   {
     test: /\.js$/,
     use: [
-      'babel-loader',
-      // 'eslint-loader',
+      // 'babel-loader',
+      'happypack/loader',
+      // 'eslint-loader', 
     ]
   },
   {
