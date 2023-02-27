@@ -4,8 +4,8 @@ const webpack = require('webpack')
 const path = require('path')
 const { entry, commonPlugins, outputPath, rules } = require('./webpack.common')
 
-const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
-
+const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin') // 速度分析
+const TerserWebpackPlugin = require('terser-webpack-plugin') // 多线程压缩
 const smp = new SpeedMeasureWebpackPlugin()
 module.exports = smp.wrap({
   entry,
@@ -49,7 +49,12 @@ module.exports = smp.wrap({
           name: 'commons', // 可以不传
         }
       }
-    }
+    },
+    minimizer: [
+      new TerserWebpackPlugin({
+        parallel: true,
+      })
+    ]
   },
   // // 文件变化监听，默认false
   // watch: true,
