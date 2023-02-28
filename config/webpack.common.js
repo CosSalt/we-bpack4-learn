@@ -12,6 +12,12 @@ const HappPack = require('happypack') // 多线程打包
 const outputPath = path.join(__dirname, '../dist')
 
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin') // 模块缓存插件
+const PurgecssWebpackPlugin = require('purgecss-webpack-plugin') // 剔除无用的CSS代码
+
+const PATHS = {
+  src: path.join(__dirname, '../src')
+}
+
 
 // 多页面打包
 const getMPA = () => {
@@ -62,6 +68,9 @@ const commonPlugins = [
   new CleanWebpackPlugin(),
   new FriendlyErrorsWebpackPlugin(),
   new HardSourceWebpackPlugin(),
+  new PurgecssWebpackPlugin({
+    paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }) // 能适用多页面打包
+  }),
   // 错误捕获插件
   function () {
     this.hooks.done.tap('done', (stats) => {
@@ -72,7 +81,6 @@ const commonPlugins = [
     })
   },
 ]
-console.log('ssss', path.resolve('src'))
 // rules
 const rules = [
   {
