@@ -4,6 +4,7 @@ import ReactDom from 'react-dom'
 import { test } from '../../utils'
 import { a, b } from './tree-shaking'
 import logo from '../../images/logo.png'
+import cat from '../../images/cat.jpg'
 import './search.less'
 
 test('search')
@@ -33,6 +34,7 @@ const Search = () => {
     <div>Search Text</div>
     <img src={logo} />
     <div onClick={onClick}>count: {count}</div>
+    <img src={cat} />
     <div>
       {/* { TextComp?.[0] } */}
       {/* {!!TextComp && <TextComp /> } */}

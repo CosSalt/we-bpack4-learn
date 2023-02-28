@@ -300,3 +300,7 @@ css:
 方案2: uncss, html 需要通过jsdom加载，所有的样式通过 PostCSS 解析，通过document.querySelector 来识别在 html 文件里不存在的选择器
 
 purgecss-webpack-plugin，webpack 3 需要和 mini-css-extract-plugin 配合使用
+
+8. 图片压缩
+要求：基于Node 库的 imagemin 或者 tinypng API
+插件：image-webpack-loader
