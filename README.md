@@ -292,3 +292,11 @@ terser-webpack-plugin 开启缓存
 优化 resolve.mainFields 配置
 优化 resolve.extensions 配置
 合理使用 alias
+
+7. 删除无用js和css代码，tree shaking
+js：es modle 默认支持
+css:
+方案1: PurifyCSS, 遍历代码，识别已用到的 CSS class
+方案2: uncss, html 需要通过jsdom加载，所有的样式通过 PostCSS 解析，通过document.querySelector 来识别在 html 文件里不存在的选择器
+
+purgecss-webpack-plugin，webpack 3 需要和 mini-css-extract-plugin 配合使用
