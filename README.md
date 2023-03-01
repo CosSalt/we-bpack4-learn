@@ -304,3 +304,9 @@ purgecss-webpack-plugin，webpack 3 需要和 mini-css-extract-plugin 配合使�
 8. 图片压缩
 要求：基于Node 库的 imagemin 或者 tinypng API
 插件：image-webpack-loader
+
+9. 动态 Polyfill
+babel-polyfill：体积大、难以单独抽离Map、Set，如果基础组件库是单独CDN引用的，需要放在它们前面
+babel-plugin-transform-runtime: 优点，能只ployfill用到的类或方法，体积相对较小，缺点，不能polyfill原型上的方法，不适合业务项目复杂的场景
+自己定制polyfill：优点，按需定制，体积小，缺点，难以维护，且出现问题概率更高，不够灵活（社区有 es6-shim）
+polyfill-service: 优点，只给用户返回需要的polyfill，社区维护，缺点，国内部分奇葩浏览器UA可能无法识别，可通过降级使用全部polyfill来支持(推荐), 如 https://polyfill.io/v3/polyfill.min.js
