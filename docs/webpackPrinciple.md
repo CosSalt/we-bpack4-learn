@@ -32,7 +32,7 @@ info: 返回与本地环境相关的一些信息
 
 
 ### Webpack 流程
-钩子主要调用顺序
+##### 钩子主要调用顺序
 1. entry-option // 初始化 option
 2. run // 开始编译
 3. make // 从 entry 开始递归的分析依赖，对每个依赖模块进行 build
@@ -42,3 +42,13 @@ info: 返回与本地环境相关的一些信息
 7. program // 遍历 AST，当遇到 require 等一些调用表达式时，收集依赖
 8. seal // 所有依赖 build 完成，开始优化
 9. emit // 输出到 dist 目录
+
+##### 流程相关
+1. (before-)run
+2. (before-/after-)compile
+3. make
+4. (after-)emit
+5. done
+##### 监听相关
+1. watch-run
+2. watch-close

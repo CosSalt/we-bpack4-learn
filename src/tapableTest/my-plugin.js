@@ -8,6 +8,10 @@ class MyPlugin {
     compiler.hooks.brake.tap("WarningLampPlugin", () => {
       console.log('WarningLampPlugin')
     })
+    // 不知道 tap 后面是相同的字段有啥不一样
+    compiler.hooks.brake.tap("WarningLampPlugin", () => {
+      console.log('WarningLampPlugin2222')
+    })
 
     // 绑定同步钩子，并传参
     compiler.hooks.accelerate.tap('LoggerPlugin', (newSpeed) => {
