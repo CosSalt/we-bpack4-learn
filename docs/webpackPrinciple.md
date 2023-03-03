@@ -32,7 +32,8 @@ info: 返回与本地环境相关的一些信息
 
 
 ### Webpack 流程
-##### 钩子主要调用顺序
+准备阶段 =〉构建编译阶段 =〉优化输出阶段：模块编译优化、输出到磁盘
+#### 钩子主要调用顺序
 1. entry-option // 初始化 option
 2. run // 开始编译
 3. make // 从 entry 开始递归的分析依赖，对每个依赖模块进行 build
@@ -43,12 +44,19 @@ info: 返回与本地环境相关的一些信息
 8. seal // 所有依赖 build 完成，开始优化
 9. emit // 输出到 dist 目录
 
+#### 准备阶段
+初始化参数，将参数转化为内部使用的参数，根据参数加载一些默认插件并挂载到complier上，并触发一些相应的事件，（before-run之前）
+
+#### 构建编译阶段
 ##### 流程相关
 1. (before-)run
 2. (before-/after-)compile
 3. make
 4. (after-)emit
-5. done
+5. done（构建完成）
 ##### 监听相关
 1. watch-run
 2. watch-close
+
+#### 优化输出阶段
+模块编译优化、输出到磁盘
