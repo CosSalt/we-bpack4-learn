@@ -32,3 +32,12 @@ runLoaders({
   // result.result: Buffer | String
 })
 ```
+
+#### loader 的参数获取
+通过 loader-utils 的 getOptions 方法获取
+```javascript
+const loaderUtils = require('loader-utils')
+module.exports = function (content) {
+  const { name } = loaderUtils.getOptions(this)
+}
+```

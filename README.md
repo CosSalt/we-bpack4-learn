@@ -316,3 +316,6 @@ polyfill-service: 优点，只给用户返回需要的polyfill，社区维护，
 
 ### 简易webpack
 [simplePack](https://github.com/odanzhou/simplepack)
+
+### loader
+[loader](./docs/loader.md)
