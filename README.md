@@ -313,3 +313,6 @@ polyfill-service: 优点，只给用户返回需要的polyfill，社区维护，
 
 ### 其他链接
 [Webpack 打包原理](./docs/webpackPrinciple.md)
+
+### 简易webpack
+[simplePack](https://github.com/odanzhou/simplepack)

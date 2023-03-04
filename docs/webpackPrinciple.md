@@ -94,3 +94,6 @@ before/after-hash
 4. 重复上面的过程，直到得到所有的 chunks
 #### 输出阶段
 输出到磁盘
+
+### 简易webpack
+[simplePack](https://github.com/odanzhou/simplepack)
