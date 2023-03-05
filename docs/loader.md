@@ -1,4 +1,5 @@
 # loader
+[lorader-learn](https://github.com/odanzhou/loader-order)
 ##### 定义
 一个导出为函数的 JavaScript 模块
 ```javascript
@@ -57,3 +58,4 @@ this.callback(
 
 #### 我悟了
 对于大部分非js(包括 ts、jsx 这些文件)文件，其loader处理的意义是将其转化为一个额外的链接，因为这部分文件往往是没依赖的，less 这种除外，或者是将文件内联进去，就是将其以文本的形式而非链接，当然文本和链接也可以归到一个字符串上去
+[]
