@@ -21,3 +21,15 @@ module.exports = MyPlugin
   plugins: [new MyPlugin()]
 }
 ```
+### 插件错误处理
+##### 参数校验阶段
+可以直接通过 throw 的方式抛出
+```javascript
+throw new Error('Error Message')
+```
+##### hooks 里面
+通过 compilation 对象的 warnings 和 errors 接受
+```javascript
+compilation.warings.push("warning")
+compilation.errors.push("error")
+```
