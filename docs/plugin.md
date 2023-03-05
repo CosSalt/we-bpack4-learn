@@ -33,3 +33,27 @@ throw new Error('Error Message')
 compilation.warings.push("warning")
 compilation.errors.push("error")
 ```
+
+### 文件写入
+##### 通过 Compilation 进行文件写入
+Compilation 上的 assets 可以用于文件写入, 可以将 zip 资源包设置到 compilation.assets 对象上
+```javascript
+const { RawSource } = require('webpack-sources') // 文件写入需要用到
+module.exports = class DemoPlugin {
+  constructor(options) {
+    this.options = options
+  }
+  apply(compiler) {
+    const { name } = this.options || {}
+    // 老版本方式
+    // compiler.plugin("emit", (compilation, cb) => {
+    compiler.hooks.emit.tap({}, (context, compilation, cb) => {
+      compilation.assets[name] = new RawSource("demo")
+      cb()
+    })
+  }
+}
+```
+
+### 插件扩展: 编写插件的插件
+插件自身也可以通过暴露 hooks 的方式进行自身的扩展，例如 html-webpack-plugin
