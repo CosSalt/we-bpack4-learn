@@ -319,3 +319,6 @@ polyfill-service: 优点，只给用户返回需要的polyfill，社区维护，
 
 ### loader
 [loader](./docs/loader.md)
+
+### plugin
+[plugin](./docs/plugin.md)
