@@ -322,3 +322,14 @@ polyfill-service: 优点，只给用户返回需要的polyfill，社区维护，
 
 ### plugin
 [plugin](./docs/plugin.md)
+
+### Web 商城的性能优化策略
+##### 渲染优化
+1. 首页、列表页、详情页采用 SSR 或者 Native 渲染
+2. 个人中心页预渲染
+
+##### 弱网优化
+使用离线包、PWA 等离线缓存技术
+
+##### Wevview 优化
+打开 Webview 的同时并行的加载页面数据（这个怎么做到？）
