@@ -47,7 +47,7 @@ module.exports = class DemoPlugin {
     const { name } = this.options || {}
     // 老版本方式
     // compiler.plugin("emit", (compilation, cb) => {
-    compiler.hooks.emit.tap({}, (context, compilation, cb) => {
+    compiler.hooks.emit.tapAsync({}, (compilation, cb) => {
       compilation.assets[name] = new RawSource("demo")
       cb()
     })
