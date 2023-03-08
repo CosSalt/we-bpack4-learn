@@ -333,3 +333,5 @@ polyfill-service: 优点，只给用户返回需要的polyfill，社区维护，
 
 ##### Wevview 优化
 打开 Webview 的同时并行的加载页面数据（这个怎么做到？）
+
+##### Webpack 5 的新特性

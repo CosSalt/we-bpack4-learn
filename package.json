@@ -1,7 +1,7 @@
 {
   "name": "webpack-learn",
   "version": "1.0.0",
-  "description": "",
+  "description": "[玩转webpack](https://time.geekbang.org/course/intro/100028901)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -75,5 +75,8 @@
     "lib-flexible": "^0.3.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }
